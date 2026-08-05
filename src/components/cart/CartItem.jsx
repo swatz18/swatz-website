@@ -1,7 +1,9 @@
-import { removeItem } from "../../services/cartService";
+import { useCart } from "../../context/CartContext";
 export default function CartItem({item,index}) {
-
+    
+    const { removeItem } = useCart();
     return (
+        
 
         <div className="cart-item">
 
@@ -35,7 +37,7 @@ export default function CartItem({item,index}) {
 
                     <span>
 
-                         📷 {item.photos} Photos Added
+                        📷 {item.photos.length} {item.photos.length === 1 ? "Photo" : "Photos"} Added
 
                     </span>
 
@@ -64,8 +66,6 @@ export default function CartItem({item,index}) {
                         onClick={() => {
 
                             removeItem(index);
-
-                            window.location.reload();
 
                         }}
 

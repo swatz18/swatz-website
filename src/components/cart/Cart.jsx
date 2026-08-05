@@ -1,14 +1,15 @@
 import "./Cart.css";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
-import { getCart } from "../../services/cartService";
+import { useCart } from "../../context/CartContext";
 import { useState } from "react";
 import OrderProcessing from "../order/OrderProcessing";
 import { saveOrder } from "../../services/googleService";
 
 
 export default function Cart() {
-    const cartItems = getCart();
+    const { cartItems, clearCart } = useCart();
+    console.log(cartItems);
     const [processing, setProcessing] = useState(false);
     const [step, setStep] = useState(0);
 
