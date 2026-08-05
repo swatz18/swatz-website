@@ -1,0 +1,106 @@
+.ribbon-transition{
+
+    height:180px;
+
+    background:#F8F3E8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+/* Ribbon */
+
+.ribbon{
+
+    height:44px;
+
+    flex:1;
+
+    background:
+    linear-gradient(
+        180deg,
+        #4F96FF 0%,
+        #0259DD 50%,
+        #0143A7 100%
+    );
+
+    position:relative;
+}
+
+/* Satin shine */
+
+.ribbon::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:8px;
+
+    height:10px;
+
+    background:rgba(255,255,255,.28);
+
+    filter:blur(5px);
+}
+
+/* Gold clasp */
+
+.clasp{
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #F8D777,
+        #D8AE43
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 -2px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.18);
+}
+
+.clasp-inner{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:15px;
+
+    border:2px solid rgba(255,255,255,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+}

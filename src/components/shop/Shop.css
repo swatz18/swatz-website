@@ -1,0 +1,211 @@
+.shop-section{
+
+    background:var(--primary);
+
+    padding:30px 8% 120px;
+
+}
+
+.shop-header{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 55px;
+    padding-top:50px;
+
+    text-align:center;
+
+}
+
+.shop-header h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(2.6rem,6vw,3.8rem);
+
+    color:#ffffff;
+
+    margin-bottom:16px;
+
+}
+
+.shop-header p{
+
+    font-family:"Poppins",sans-serif;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:1.05rem;
+
+}
+.shop-content{
+
+    max-width:1280px;
+
+    margin:0 auto;
+
+    padding-top:60px;
+
+}
+
+/* ========================= */
+
+.category-pills{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+/* ========================= */
+
+.category-pill{
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    border:2px solid var(--gold);
+
+    background:transparent;
+
+    color:var(--gold);
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+/* Active */
+
+.category-pill.active{
+
+    background:var(--gold);
+
+    color:var(--text);
+
+}
+
+/* Hover */
+
+@media (hover:hover) and (pointer:fine){
+
+    .category-pill:hover{
+
+        background:var(--gold);
+
+        color:var(--text);
+
+        transform:translateY(-2px);
+
+    }
+
+}
+
+/* ========================= */
+
+@media (max-width:768px){
+
+    .category-pills{
+
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+
+        justify-content:flex-start;
+
+        padding-bottom:10px;
+
+        scrollbar-width:none;
+
+    }
+
+    .category-pills::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+    .category-pill{
+
+        flex:0 0 auto;
+
+    }
+
+}
+/* ========================= */
+
+.products-grid{
+
+    max-width:1280px;
+
+    margin:70px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:36px;
+
+}
+.products-grid{
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+
+}
+
+.products-grid.hide{
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+}
+
+.products-grid.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ========================= */
+
+@media(max-width:1024px){
+
+    .products-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .products-grid{
+
+        grid-template-columns:1fr;
+
+        gap:28px;
+
+    }
+
+}

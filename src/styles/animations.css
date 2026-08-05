@@ -1,0 +1,33 @@
+:root{
+
+    --transition-fast:.25s ease;
+
+    --transition-normal:.4s ease;
+
+    --transition-slow:.6s ease;
+}
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

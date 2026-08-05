@@ -1,0 +1,54 @@
+.about-section{
+
+    background:#F8F3E8;
+
+    padding:120px 0;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.about-container{
+
+    width:1100px;
+
+    text-align:center;
+}
+
+.about-tag{
+
+    color:#0259DD;
+
+    font-size:16px;
+
+    letter-spacing:3px;
+
+    margin-bottom:30px;
+
+    font-weight:700;
+}
+
+.about-container h2{
+
+    font-size:62px;
+
+    color:#18356B;
+
+    line-height:1.1;
+
+    margin-bottom:30px;
+}
+
+.about-text{
+
+    max-width:620px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    color:#555;
+
+    line-height:1.8;
+}

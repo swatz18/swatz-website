@@ -1,0 +1,268 @@
+.cart-section{
+
+    padding:100px 8%;
+
+    background:var(--cream-soft);
+
+    min-height:100vh;
+
+}
+
+.cart-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.cart-header h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:3.2rem;
+
+    color:var(--primary);
+
+}
+
+.cart-header p{
+
+    margin-top:12px;
+
+    color:var(--text-light);
+
+}
+
+.cart-items{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+.cart-item{
+
+    display:flex;
+
+    gap:30px;
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow-card);
+
+}
+.cart-item-image{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+
+}
+.cart-item-content{
+
+    flex:1;
+
+}
+.cart-item-category{
+
+    color:var(--gold);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+.cart-item-content h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2rem;
+
+    color:var(--text);
+
+    margin:8px 0;
+
+}
+.cart-item-price{
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+.cart-item-meta{
+
+    display:flex;
+
+    gap:22px;
+
+    color:var(--text-light);
+
+    margin-bottom:24px;
+
+}
+.cart-item-buttons{
+
+    display:flex;
+
+    gap:14px;
+
+}
+.cart-item-buttons button{
+
+    border:none;
+
+    background:none;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cart-item-buttons button:hover{
+
+    color:var(--gold);
+
+}
+/* =========================
+   SUMMARY
+========================= */
+
+.cart-summary{
+
+    margin-top:40px;
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow-card);
+
+}
+
+.cart-summary h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:1.15rem;
+
+    margin-bottom:30px;
+
+}
+
+.summary-row strong{
+
+    color:var(--primary);
+
+    font-size:1.5rem;
+
+}
+.cart-summary-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+.continue-shopping-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:56px;
+
+    border:2px solid var(--primary);
+
+    border-radius:999px;
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+.continue-shopping-btn:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+.continue-whatsapp-btn{
+
+    height:56px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.continue-whatsapp-btn:hover{
+
+    background:var(--primary-light);
+
+}
