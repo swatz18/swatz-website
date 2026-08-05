@@ -3,7 +3,7 @@ import "./ProductDetails.css";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { products } from "../shop/products";
-import { addItem } from "../../services/cartService";
+import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 
@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function ProductDetails() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const { addItem } = useCart();
     const product = products.find(
         (item) => item.id === Number(id)
     );
@@ -41,7 +42,7 @@ export default function ProductDetails() {
 
             quantity,
 
-            photos: selectedImages.length,
+            photos: selectedImages,
 
             notes: orderNotes
 

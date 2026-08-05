@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
 import Product from "./pages/Product";
 import Home from "./pages/Home";
 import ShopPage from "./pages/Shop";
@@ -9,42 +10,42 @@ import CartPage from "./pages/Cart";
 function App() {
 
     return (
+        <CartProvider>
+            <BrowserRouter>
 
-        <BrowserRouter>
+                <Routes>
 
-            <Routes>
+                    <Route
+                        path="/"
+                        element={<Home />}
+                    />
 
-                <Route
-                    path="/"
-                    element={<Home />}
-                />
+                    <Route
+                        path="/shop"
+                        element={<ShopPage />}
+                    />
+                    <Route
+                        path="/product/:id"
+                        element={<Product />}
+                    />
+                    <Route
+                        path="/about"
+                        element={<About />}
+                    />
 
-                <Route
-                    path="/shop"
-                    element={<ShopPage />}
-                />
-                <Route
-                    path="/product/:id"
-                    element={<Product />}
-                />
-                <Route
-                    path="/about"
-                    element={<About />}
-                />
+                    <Route
+                        path="/contact"
+                        element={<Contact />}
+                    />
+                    <Route
+                        path="/cart"
+                        element={<CartPage />}
+                    />
 
-                <Route
-                    path="/contact"
-                    element={<Contact />}
-                />
-                <Route
-                    path="/cart"
-                    element={<CartPage />}
-                />
+                </Routes>
 
-            </Routes>
-
-        </BrowserRouter>
-
+            </BrowserRouter>
+        </CartProvider>
     );
 
 }

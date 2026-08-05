@@ -1,12 +1,11 @@
 import "./Navbar.css";
-import { PiHandbagSimpleLight } from "react-icons/pi";
 import { Link, NavLink } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
-import { getCartCount } from "../../services/cartService";
+import { useCart } from "../../context/CartContext";
 
 export default function Navbar() {
     
-    const cartCount = getCartCount();
+    const { cartCount } = useCart();
 
     return (
         <div className="navbar-wrapper">
