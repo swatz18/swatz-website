@@ -1,0 +1,302 @@
+/* SECTION */
+
+.how-section{
+
+    background:var(--primary);
+
+    padding:clamp(70px,8vw,110px) clamp(16px,5vw,80px);
+
+}
+
+/* HEADER */
+
+.how-header{
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+}
+
+.how-header h2{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:clamp(2.3rem,6vw,3.5rem);
+
+    color:white;
+
+    margin-bottom:18px;
+
+    line-height:1.1;
+
+}
+
+.how-header p{
+
+    color:rgba(255,255,255,.75);
+
+    font-family:"Poppins", sans-serif;
+
+    font-size:clamp(.95rem,2vw,1.125rem);
+
+    line-height:1.8;
+
+    max-width:560px;
+
+    margin:auto;
+
+}
+
+/* TIMELINE */
+
+.timeline{
+
+    position:relative;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:clamp(28px,5vw,60px);
+
+}
+
+
+.timeline-track{
+
+    position:absolute;
+
+    top:46px;
+
+    left:18%;
+
+    right:18%;
+
+    height:2px;
+
+    background:rgba(255,255,255,.18);
+
+    z-index:0;
+
+}
+
+
+
+.timeline-dot{
+
+    position:absolute;
+
+    top:40px;
+
+    left:18%;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:0 0 16px rgba(201,169,110,.5);
+
+    z-index:2;
+
+    transform:translateX(-50%);
+
+}
+
+.timeline-dot.animate{
+
+    animation:moveDot 1.8s ease-in-out forwards;
+
+}
+
+/* CARD */
+
+.step-card{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity 1ms ease,
+        transform 1s ease;
+
+}
+
+.step-card.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ICON */
+
+.icon-circle{
+
+    width:clamp(72px,10vw,92px);
+
+    height:clamp(72px,10vw,92px);
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--text);
+
+    border:2px solid var(--gold);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+    
+    opacity:0;
+
+    transform:scale(.6);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+    transition:.35s ease;
+
+}
+.step-card.visible .icon-circle{
+
+    opacity:1;
+
+    transform:scale(1);
+
+    transition:
+        transform .55s ease,
+        opacity .55s ease;
+
+}
+
+@media (hover: hover) and (pointer: fine){
+
+    .step-card:hover .icon-circle{
+
+        transform:scale(1.08);
+
+        background:var(--gold);
+
+        color:var(--text);
+
+    }
+
+}
+
+/* TITLE */
+
+.step-card h3{
+
+    margin-top:30px;
+
+    margin-bottom:16px;
+
+    color:white;
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:clamp(1.8rem,4vw,2.1rem);
+
+    line-height:1.15;
+
+}
+
+/* DESCRIPTION */
+
+.step-card p{
+
+    max-width:290px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.75);
+
+    line-height:1.8;
+
+    font-family:"Poppins", sans-serif;
+
+    font-size:16px;
+
+}
+@media (max-width:900px){
+
+    .how-header{
+
+        margin-bottom:48px;
+
+    }
+
+    .timeline{
+
+        grid-template-columns:1fr;
+
+        gap:56px;
+
+    }
+
+    .timeline-track{
+
+        display:none;
+
+    }
+
+    .timeline-dot{
+
+        display:none;
+
+    }
+
+    .step-card p{
+
+        max-width:420px;
+
+    }
+
+}
+
+
+@keyframes moveDot {
+
+    0% {
+        left:18%;
+    }
+
+    25% {
+        left:18%;
+    }
+
+    50% {
+        left:50%;
+    }
+
+    75% {
+        left:50%;
+    }
+
+    100% {
+        left:82%;
+    }
+
+}

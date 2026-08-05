@@ -1,0 +1,56 @@
+:root {
+
+  /* ===============================
+     Brand Palette
+     =============================== */
+
+  --primary: #102565;
+  --primary-dark: #082E67;
+  --primary-light: #18357F;
+
+  --cream: #F6F1E7;
+  --cream-soft: #FBF8F3;
+  --white: #FFFFFF;
+
+  --text: #102565;
+  --text-light: #6E7483;
+
+  --gold: #C8A86B;
+  --gold-light: #D4AF37;
+
+  /* ===============================
+     Border Radius
+     =============================== */
+
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* ===============================
+     Shadows
+     =============================== */
+
+  --shadow-soft:
+    0 10px 25px rgba(10, 28, 62, .08);
+
+  --shadow-card:
+    0 18px 45px rgba(10, 28, 62, .10);
+
+  --shadow-navbar:
+    0 12px 35px rgba(0,0,0,.15);
+
+  /* ===============================
+     Layout
+     =============================== */
+
+  --container: 1280px;
+
+  /* ===============================
+     Transitions
+     =============================== */
+
+  --transition:
+    all .35s ease;
+}

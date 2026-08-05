@@ -1,0 +1,100 @@
+/* .collection-section{
+
+    background:#F8F3E8;
+
+    padding:100px 60px;
+
+    text-align:center;
+}
+
+.collection-section h2{
+
+    font-size:52px;
+
+    color:#0259DD;
+
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+
+    color:#666;
+
+    font-size:20px;
+
+    margin-bottom:60px;
+}
+
+.collection-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:40px;
+
+    max-width:1300px;
+
+    margin:auto;
+} */
+ .collection-section{
+
+    background:#F8F3E8;
+
+    padding:110px 60px;
+
+    text-align:center;
+}
+
+.section-tag{
+
+    color:#0259DD;
+
+    letter-spacing:3px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.collection-section h2{
+
+    font-size:56px;
+
+    color:#18356B;
+
+    margin-bottom:18px;
+}
+
+.section-description{
+
+    color:#666;
+
+    font-size:20px;
+
+    margin-bottom:70px;
+}
+
+.collection-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+.collection-card.active{
+
+    border:2px solid var(--primary);
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
