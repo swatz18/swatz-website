@@ -1,0 +1,107 @@
+.message-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+.message-card {
+
+    width: 420px;
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+
+}
+
+.message-icon {
+
+    font-size: 48px;
+
+    margin-bottom: 18px;
+
+}
+
+.message-card h2 {
+
+    margin-bottom: 12px;
+
+    color: #0259DD;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    font-weight: 700;  
+
+}
+
+.message-card p {
+
+    line-height: 1.6;
+
+    color: #555;
+
+    margin-bottom: 28px;
+
+}
+
+.message-button {
+
+    background: #0259DD;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 28px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+.message-button:hover {
+
+    opacity: .9;
+
+}
+.message-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+.message-button.secondary {
+
+    background: white;
+
+    color: #0259DD;
+
+    border: 1px solid #0259DD;
+
+}

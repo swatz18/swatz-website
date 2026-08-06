@@ -5,13 +5,28 @@ import { useCart } from "../../context/CartContext";
 import { useState } from "react";
 import OrderProcessing from "../order/OrderProcessing";
 import { saveOrder } from "../../services/googleService";
-
+import MessageDialog from "../common/MessageDialog";
 
 export default function Cart() {
     const { cartItems, clearCart } = useCart();
     console.log(cartItems);
     const [processing, setProcessing] = useState(false);
     const [step, setStep] = useState(0);
+    const [dialog, setDialog] = useState({
+
+        open: false,
+
+        icon: "💙",
+
+        title: "",
+
+        message: "",
+
+        primaryButton: null,
+
+        secondaryButton: null
+
+    });
 
     const subtotal = cartItems.reduce(
 
@@ -23,6 +38,54 @@ export default function Cart() {
     const delay = (ms) =>
     new Promise(resolve => setTimeout(resolve, ms));
 
+    const openWhatsApp = (
+        referenceId,
+        photoUploadFailed = false
+    ) => {
+
+        const orderSummary = cartItems
+            .map(
+                item =>
+                    `• ${item.title} ×${item.quantity} — ₹${item.price * item.quantity}`
+            )
+            .join("\n");
+
+        const photoMessage = photoUploadFailed
+            ? `
+
+    ⚠️ My photos couldn't be uploaded automatically.
+
+    I'll send them in this chat.`
+            : "";
+
+        const message = encodeURIComponent(
+
+    `Hi Swatz! 💙
+
+    I'd like to place an order.
+
+    Reference ID:
+    ${referenceId}
+
+    Items:
+    ${orderSummary}
+
+    Subtotal:
+    ₹${subtotal}${photoMessage}
+
+    Thank you!`
+
+        );
+
+        window.open(
+
+            `https://wa.me/917502131997?text=${message}`,
+
+            "_blank"
+
+        );
+
+    };
     const handleCheckout = async () => {
 
         setProcessing(true);
@@ -63,11 +126,42 @@ export default function Cart() {
 
         const result = await saveOrder(orderData);
 
+        setProcessing(false);
+
         if (!result.success) {
 
-            setProcessing(false);
+            setDialog({
 
-            alert("We couldn't prepare your order right now. Please try again.");
+                open: true,
+
+                icon: "❌",
+
+                title: "Order Couldn't Be Completed",
+
+                message:
+                    "We couldn't complete your order. Please try again.",
+
+                primaryButton: {
+
+                    text: "Try Again",
+
+                    onClick: () => {
+
+                        setDialog(prev => ({
+
+                            ...prev,
+
+                            open: false
+
+                        }));
+
+                    }
+
+                },
+
+                secondaryButton: null
+
+            });
 
             return;
 
@@ -75,44 +169,66 @@ export default function Cart() {
 
         const referenceId = result.referenceId;
 
-        await delay(1000);
+        if (result.result === "PHOTO_UPLOAD_FAILED") {
 
-        setStep(3);
+            setDialog({
 
-        const orderSummary = cartItems
-            .map(
-                item =>
-                    `• ${item.title} ×${item.quantity} — ₹${item.price * item.quantity}`
-            )
-            .join("\n");
+                open: true,
 
-        const message = encodeURIComponent(
+                icon: "⚠️",
 
-    `Hi Swatz! 💙
+                title: "Couldn't Upload Photos",
 
-    I'd like to place an order.
+                message:
+                    "Your order has been placed successfully.\n\nPlease send your photos through WhatsApp after it opens.",
 
-    Reference ID:
-    ${referenceId}
+                primaryButton: {
 
-    Items:
-    ${orderSummary}
+                    text: "Continue to WhatsApp",
 
-    Subtotal:
-    ₹${subtotal}
+                    onClick: () => {
 
-    Thank you!`
+                        setDialog(prev => ({
 
-        );
+                            ...prev,
 
-        await delay(800);
+                            open: false
 
-        window.open(
-            `https://wa.me/917502131997?text=${message}`,
-            "_blank"
-        );
+                        }));
 
-        setProcessing(false);
+                        openWhatsApp(referenceId, true);
+
+                    }
+
+                },
+
+                secondaryButton: {
+
+                    text: "Cancel",
+
+                    onClick: () => {
+
+                        setDialog(prev => ({
+
+                            ...prev,
+
+                            open: false
+
+                        }));
+
+                    }
+
+                }
+
+            });
+
+            return;
+
+        }
+
+        await delay(500);
+
+        openWhatsApp(referenceId);
 
     };
     if (cartItems.length === 0) {
@@ -197,6 +313,21 @@ export default function Cart() {
                 <OrderProcessing step={step} />
 
             )}
+            <MessageDialog
+
+                open={dialog.open}
+
+                icon={dialog.icon}
+
+                title={dialog.title}
+
+                message={dialog.message}
+
+                primaryButton={dialog.primaryButton}
+
+                secondaryButton={dialog.secondaryButton}
+
+            />
 
         </>
         
