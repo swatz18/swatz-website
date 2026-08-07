@@ -6,10 +6,10 @@ import { useState } from "react";
 import OrderProcessing from "../order/OrderProcessing";
 import { saveOrder } from "../../services/googleService";
 import MessageDialog from "../common/MessageDialog";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
     const { cartItems, clearCart } = useCart();
-    console.log(cartItems);
     const [processing, setProcessing] = useState(false);
     const [step, setStep] = useState(0);
     const [dialog, setDialog] = useState({
@@ -44,11 +44,22 @@ export default function Cart() {
     ) => {
 
         const orderSummary = cartItems
-            .map(
-                item =>
-                    `• ${item.title} ×${item.quantity} — ₹${item.price * item.quantity}`
-            )
-            .join("\n");
+            .map(item => {
+
+                const details = [
+                    `• ${item.title}`,
+                    item.variant && `   Size    : ${item.variant}`,
+                    item.variantQuantity && `   Count   : ${item.variantQuantity}`,
+                    `   Qty     : ${item.quantity}`,
+                    `   Amount  : ₹${item.price * item.quantity}`
+                ]
+                .filter(Boolean)
+                .join("\n");
+
+                return details;
+
+            })
+            .join("\n\n");
 
         const photoMessage = photoUploadFailed
             ? `
@@ -239,13 +250,24 @@ export default function Cart() {
 
                     <div className="cart-empty">
 
-                        <h2>Your cart is waiting for its first memory 💙</h2>
+                        <div className="cart-empty-heart">
+                            💙
+                        </div>
+
+                        <h2>
+                            Your cart is waiting for its first memory.
+                        </h2>
 
                         <p>
-
-                            Let's create something special.
-
+                            Little keepsakes. Big emotions.
                         </p>
+
+                        <Link
+                            to="/shop"
+                            className="empty-cart-button"
+                        >
+                            Explore Collections →
+                        </Link>
 
                     </div>
 
@@ -264,6 +286,8 @@ export default function Cart() {
     return (
         <>
             <section className="cart-section">
+
+                <div className="section-container">
 
                 <div className="cart-header">
 
@@ -306,7 +330,7 @@ export default function Cart() {
                     />
 
                 </div>
-                        
+                </div>        
             </section>
             {processing && (
 

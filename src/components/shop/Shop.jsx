@@ -1,5 +1,6 @@
 import "./Shop.css";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import ProductCard from "./ProductCard";
 import { products } from "./products";
@@ -9,15 +10,33 @@ const categories = [
     "Magnets",
     "Keychains",
     "Pin Badges",
-    "Acrylic Magnets",
-    "Flexi Magnets",
+    // "Acrylic Magnets",
+    // "Flexi Magnets",
     "Combos"
 ];
 
 export default function Shop() {
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [searchParams] = useSearchParams();
+    const categoryFromUrl = searchParams.get("category");
     const [visibleProducts, setVisibleProducts] = useState(products);
     const [fade, setFade] = useState(true);    
+    useEffect(() => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        if (
+            categoryFromUrl &&
+            categories.includes(categoryFromUrl)
+        ) {
+            setSelectedCategory(categoryFromUrl);
+        }
+
+    }, [categoryFromUrl]);  
+
     useEffect(() => {
 
         setFade(false);
@@ -28,7 +47,7 @@ export default function Shop() {
                 selectedCategory === "All"
                     ? products
                     : products.filter(
-                        (product) =>
+                        product =>
                             product.category === selectedCategory
                     );
 
@@ -40,7 +59,7 @@ export default function Shop() {
 
         return () => clearTimeout(timer);
 
-    }, [selectedCategory]);  
+    }, [selectedCategory]);
 
     return (
         
@@ -48,51 +67,53 @@ export default function Shop() {
         <>    
             <Navbar />
                 <section className="shop-section">
-                    
-                    <div className="shop-content">
 
-                        <div className="shop-header">
+                    <div className="section-container">
 
-                            <h1>Shop Our Collections</h1>
+                        <div className="shop-content">
 
-                            <p>
-                                Crafted to preserve your favourite moments.
-                            </p>
+                            <div className="shop-header">
 
+                                <h1>Shop Our Collections</h1>
+
+                                <p>
+                                    Crafted to preserve your favourite moments.
+                                </p>
+
+                            </div>
+
+                            <div className="category-pills">
+
+                                {categories.map((category, index) => (
+
+                                    <button
+                                        key={category}
+                                        onClick={() => setSelectedCategory(category)}
+                                        className={`category-pill ${
+                                            selectedCategory === category ? "active" : ""
+                                        }`}
+                                    >
+                                        {category}
+                                    </button>
+
+                                ))}
+
+                            </div>
                         </div>
 
-                        <div className="category-pills">
+                        <div className={`products-grid ${fade ? "show" : "hide"}`}>
 
-                            {categories.map((category, index) => (
+                            {visibleProducts.map((product) => (
 
-                                <button
-                                    key={category}
-                                    onClick={() => setSelectedCategory(category)}
-                                    className={`category-pill ${
-                                        selectedCategory === category ? "active" : ""
-                                    }`}
-                                >
-                                    {category}
-                                </button>
+                                <ProductCard
+                                    key={product.id}
+                                    {...product}
+                                />
 
                             ))}
 
                         </div>
-                    </div>
-
-                    <div className={`products-grid ${fade ? "show" : "hide"}`}>
-
-                        {visibleProducts.map((product) => (
-
-                            <ProductCard
-                                key={product.id}
-                                {...product}
-                            />
-
-                        ))}
-
-                    </div>
-
+                    </div>        
                 </section>
         </>
     );

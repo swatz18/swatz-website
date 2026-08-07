@@ -35,6 +35,26 @@ export default function CartItem({item,index}) {
 
                 <div className="cart-item-meta">
 
+                    {item.variant && (
+
+                        <span>
+
+                             Size: {item.variant}
+
+                        </span>
+
+                    )}
+
+                    {item.variantQuantity && (
+
+                        <span>
+
+                             Count: {item.variantQuantity}  Magnets
+
+                        </span>
+
+                    )}
+
                     <span>
 
                         📷 {item.photos.length} {item.photos.length === 1 ? "Photo" : "Photos"} Added

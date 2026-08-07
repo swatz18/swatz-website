@@ -5,6 +5,8 @@ import "./styles/theme.css";
 import "./styles/typography.css";
 import "./styles/animations.css";
 import "./styles/utilities.css";
+import "./styles/components.css";
+import "./styles/responsive.css";
 import App from './App.jsx'
 
 

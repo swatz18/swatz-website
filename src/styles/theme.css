@@ -1,10 +1,10 @@
-:root {
+/* :root { */
 
   /* ===============================
      Brand Palette
      =============================== */
 
-  --primary: #102565;
+  /* --primary: #102565;
   --primary-dark: #082E67;
   --primary-light: #18357F;
 
@@ -16,41 +16,101 @@
   --text-light: #6E7483;
 
   --gold: #C8A86B;
-  --gold-light: #D4AF37;
+  --gold-light: #D4AF37; */
 
   /* ===============================
      Border Radius
      =============================== */
-
+/* 
   --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 32px;
   --radius-xl: 36px;
-  --radius-pill: 999px;
+  --radius-pill: 999px; */
 
   /* ===============================
      Shadows
      =============================== */
 
-  --shadow-soft:
+  /* --shadow-soft:
     0 10px 25px rgba(10, 28, 62, .08);
 
   --shadow-card:
-    0 18px 45px rgba(10, 28, 62, .10);
+     box-shadow:var(--shadow-hover);
 
   --shadow-navbar:
-    0 12px 35px rgba(0,0,0,.15);
+    0 12px 35px rgba(0,0,0,.15); */
 
   /* ===============================
      Layout
      =============================== */
 
-  --container: 1280px;
+  /* --container: 1280px; */
 
   /* ===============================
      Transitions
      =============================== */
-
+/* 
   --transition:
     all .35s ease;
+} */
+
+/* ==========================================
+   SWATZ DESIGN SYSTEM
+========================================== */
+
+:root{
+
+    /* ======================================
+       BRAND COLORS
+    ====================================== */
+
+    --primary:#102565;
+
+    --cream:#F8F6F2;
+
+    --white:#FFFFFF;
+
+    --text:#1D2A44;
+
+    --text-light:#5F6B7A;
+
+    --accent:#0259DD;
+
+    --gold:#C8A86B;
+
+    --gold-light:#E6D1A5;
+
+    /* ======================================
+       LAYOUT
+    ====================================== */
+
+    --container:1200px;
+
+    --section-padding:80px;
+
+    /* ======================================
+       BORDER RADIUS
+    ====================================== */
+
+    --radius-card:28px;
+
+    --radius-button:999px;
+
+    /* ======================================
+       SHADOWS
+    ====================================== */
+
+    --shadow-soft:
+        box-shadow:var(--shadow-soft);
+
+    --shadow-hover:
+        box-shadow:var(--shadow-hover);
+
+    /* ======================================
+       TRANSITIONS
+    ====================================== */
+
+    --transition:.35s ease;
+
 }

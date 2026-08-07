@@ -2,7 +2,7 @@
 
     background:white;
 
-    border-radius:28px;
+    border-radius:var(--radius-card);
 
     padding:28px;
 
@@ -78,7 +78,7 @@
 
     background:white;
 
-    border-radius:28px;
+    border-radius:var(--radius-card);
 
     padding:45px 20px;
 

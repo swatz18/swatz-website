@@ -11,19 +11,19 @@ import stripMagnet from "../../assets/images/products/acrylic-strip.jpg";
 
 const products = [
 
-    {
-        category: "MAGNET",
-        title: "Baby Magnets",
-        price: "₹99",
-        image: babyMagnet
-    },
+    // {
+    //     category: "MAGNET",
+    //     title: "Baby Magnets",
+    //     price: "₹99",
+    //     image: babyMagnet
+    // },
 
-    {
-        category: "KEYCHAIN",
-        title: "Family Keychains",
-        price: "₹99",
-        image: familyKeychain
-    },
+    // {
+    //     category: "KEYCHAIN",
+    //     title: "Family Keychains",
+    //     price: "₹99",
+    //     image: familyKeychain
+    // },
 
     {
         category: "MAGNET",

@@ -14,7 +14,10 @@ export default function OrderProcessing({ step }) {
 
                 <h2>Preparing Your Order</h2>
 
-                <p>Do not close/refresh the page.This may take a few minutes</p>
+                <p>Please don't close or refresh this page.
+                    <br />
+                    This may take a few moments.
+                </p>
 
                 <div className="processing-steps">
 

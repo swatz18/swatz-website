@@ -6,7 +6,7 @@
 
     background:#fff;
 
-    min-height:clamp(180px,35vw,500px);
+    min-height:clamp(80px,12vw,160px);
 
     display:flex;
 
@@ -16,7 +16,8 @@
 
     overflow:hidden;
 
-    padding:40px 0;
+    padding:60px 0;
+    
 }
 
 /* ===========================

@@ -6,31 +6,6 @@ export default function CartSummary({
     onCheckout
 
 })  {
-    const handleContinue = () => {
-
-        setProcessing(true);
-
-        setStep(1);
-
-        setTimeout(() => {
-
-            setStep(2);
-
-        }, 1000);
-
-        setTimeout(() => {
-
-            setStep(3);
-
-        }, 2000);
-
-        setTimeout(() => {
-
-            alert("WhatsApp will open here.");
-
-        }, 3000);
-
-    };
 
     return (
 

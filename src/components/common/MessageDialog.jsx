@@ -33,17 +33,6 @@ export default function MessageDialog({
 
                 <div className="message-buttons">
 
-                    {secondaryButton && (
-
-                        <button
-                            className="message-button secondary"
-                            onClick={secondaryButton.onClick}
-                        >
-                            {secondaryButton.text}
-                        </button>
-
-                    )}
-
                     {primaryButton && (
 
                         <button
@@ -51,6 +40,17 @@ export default function MessageDialog({
                             onClick={primaryButton.onClick}
                         >
                             {primaryButton.text}
+                        </button>
+
+                    )}
+
+                    {secondaryButton && (
+
+                        <button
+                            className="message-button secondary"
+                            onClick={secondaryButton.onClick}
+                        >
+                            {secondaryButton.text}
                         </button>
 
                     )}

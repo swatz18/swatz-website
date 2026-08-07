@@ -16,7 +16,7 @@ export default function Navbar() {
                   to="/"
                   className="landing-logo"
               >
-                  SWATZ
+                  Swatz
               </Link>
 
               <ul className="landing-menu">
@@ -29,7 +29,7 @@ export default function Navbar() {
                               isActive ? "nav-active" : ""
                           }
                       >
-                          ABOUT
+                          About
                       </NavLink>
 
                   </li>
@@ -42,7 +42,7 @@ export default function Navbar() {
                               isActive ? "nav-active" : ""
                           }
                       >
-                          SHOP
+                          Shop
                       </NavLink>
 
                   </li>
@@ -55,7 +55,7 @@ export default function Navbar() {
                               isActive ? "nav-active" : ""
                           }
                       >
-                          CONTACT
+                          Contact
                       </NavLink>
 
                   </li>

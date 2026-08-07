@@ -16,8 +16,6 @@
 
 .bestsellers-header h2{
 
-    font-family:"Cormorant Garamond", serif;
-
     font-size:clamp(2.3rem,6vw,3.4rem);
 
     color:var(--text);
@@ -29,11 +27,9 @@
 
 .bestsellers-header p{
 
-    font-family:"Poppins", sans-serif;
-
     color:var(--text-light);
 
-    font-size:clamp(.95rem,2vw,1.125rem);
+    font-size:clamp(.95rem,1.5vw,1.125rem);
 
     max-width:560px;
 
@@ -46,15 +42,17 @@
 
 .bestsellers-grid{
 
-    max-width:1300px;
+    max-width:var(--container);
 
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(4,280px);
 
-    gap:clamp(20px,3vw,35px);
+    justify-content:center;
+
+    gap:32px;
 }
 
 /* Card */
@@ -84,7 +82,7 @@
 
 .bestseller-image{
 
-    height:clamp(220px,28vw,270px);
+    height:220px;
 
     overflow:hidden;
 }
@@ -116,8 +114,6 @@
 
 .category{
 
-    font-family:"Poppins", sans-serif;
-
     font-size:12px;
 
     font-weight:600;
@@ -129,15 +125,14 @@
 
 .bestseller-content h3{
 
-    font-family:"Cormorant Garamond", serif;
-
     color:#fff;
 
-    font-size:clamp(1.8rem,4vw,2.1rem);
+    font-size:clamp(1.35rem,2.2vw,1.6rem);
+    font-weight:600;
 
-    margin:12px 0 20px;
+    margin:10px 0 18px;
 
-    line-height:1.15;
+    line-height:1.3;
 
     flex:1;
 }
@@ -155,8 +150,6 @@
 
     color:#fff;
 
-    font-family:"Poppins", sans-serif;
-
     font-size:18px;
 
     font-weight:600;
@@ -165,8 +158,6 @@
 .action{
 
     color:var(--gold);
-
-    font-family:"Poppins", sans-serif;
 
     font-weight:600;
 
@@ -197,8 +188,6 @@
     padding:16px clamp(28px,5vw,40px);
 
     border-radius:50px;
-
-    font-family:"Poppins", sans-serif;
 
     font-size:clamp(.95rem,2vw,1rem);
 
@@ -240,7 +229,16 @@
     }
 
 }
+@media (max-width:1240px){
 
+    .bestsellers-grid{
+
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+        gap:28px;
+    }
+
+}
 @media (max-width:767px){
 
     .bestsellers-header{

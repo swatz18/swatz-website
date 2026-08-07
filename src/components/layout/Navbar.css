@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 /* ========================= NAVBAR ========================= */
 .navbar-wrapper{
 
@@ -35,8 +35,7 @@
 
 .landing-logo{
 
-    font-family:'Bodoni Moda',serif;
-
+    font-family:'Quicksand';
     font-size:clamp(20px,2vw,26px); 
 
     letter-spacing:3px;

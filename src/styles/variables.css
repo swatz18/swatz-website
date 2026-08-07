@@ -1,0 +1,57 @@
+/* ==========================================
+   SWATZ DESIGN TOKENS
+========================================== */
+
+:root{
+
+    /* =========================
+       BRAND COLORS
+    ========================= */
+
+    --primary:#102565;
+
+    --cream:#F8F6F2;
+
+    --white:#FFFFFF;
+
+    --text:#1D2A44;
+
+    --text-light:#5F6B7A;
+
+    --accent:#0259DD;
+
+    --gold:#C8A86B;
+
+    --gold-light:#E6D1A5;
+
+    /* =========================
+       LAYOUT
+    ========================= */
+
+    --container:1200px;
+
+    /* =========================
+       RADIUS
+    ========================= */
+
+    --radius-card:28px;
+
+    --radius-button:999px;
+
+    /* =========================
+       SHADOWS
+    ========================= */
+
+    --shadow-soft:
+        box-shadow:var(--shadow-soft);
+
+    --shadow-hover:
+        box-shadow:var(--shadow-hover);
+
+    /* =========================
+       TRANSITIONS
+    ========================= */
+
+    --transition:.35s ease;
+
+}

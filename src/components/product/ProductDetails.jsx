@@ -21,9 +21,11 @@ export default function ProductDetails() {
 
     }
     const [quantity, setQuantity] = useState(1);
+    const [selectedVariant, setSelectedVariant] = useState(
+        product.variants?.[0] || null
+    );
 
     const [selectedImages, setSelectedImages] = useState([]);
-    // const [previewImages, setPreviewImages] = useState([]);
 
     const [orderNotes, setOrderNotes] = useState("");
     const handleAddToCart = () => {
@@ -36,17 +38,22 @@ export default function ProductDetails() {
 
         category: product.category,
 
-            image: product.image,
+        type: product.type,
 
-            price: product.price,
+        variant: selectedVariant?.label ?? "",
+        variantQuantity: selectedVariant?.quantity ?? "",
 
-            quantity,
+        image: product.image,
 
-            photos: selectedImages,
+        price: selectedVariant?.price ?? product.price,
 
-            notes: orderNotes
+        quantity,
 
-        });
+        photos: selectedImages,
+
+        notes: orderNotes
+
+    });
 
         navigate("/cart");
 
@@ -82,6 +89,8 @@ export default function ProductDetails() {
 
         <section className="product-details">
 
+            <div className="section-container">
+
             <div className="product-detail-container">
 
                 {/* Left */}
@@ -113,7 +122,7 @@ export default function ProductDetails() {
 
                     <p className="product-detail-price">
 
-                        ₹{product.price}
+                        ₹{selectedVariant?.price ?? product.price}
 
                     </p>
 
@@ -123,6 +132,54 @@ export default function ProductDetails() {
 
                     </p>
 
+                    {product.variants && product.variants.length > 0 && (
+
+                        <div className="variant-section">
+
+                            <h4>
+                        
+                                Available Size
+
+                            </h4>
+
+                            <div className="variant-pills">
+
+                                {product.variants.map((variant) => (
+
+                                    <button
+
+                                        key={variant.label}
+
+                                        type="button"
+
+                                        className={`variant-pill ${
+                                            selectedVariant === variant ? "active" : ""
+                                        }`}
+
+                                        onClick={() => setSelectedVariant(variant)}
+
+                                    >
+
+                                        {variant.label}
+
+                                    </button>
+
+                                ))}
+
+                            </div>
+                            {selectedVariant?.quantity && (
+
+                                <p className="variant-quantity">
+
+                                    Includes <strong>{selectedVariant.quantity}Magnets</strong>
+
+                                </p>
+
+                            )}
+
+                        </div>
+
+                    )}
                     <div className="quantity-section">
 
                         <h4>
@@ -263,7 +320,7 @@ export default function ProductDetails() {
                 </div>
 
             </div>
-
+            </div>
         </section>
 
     );

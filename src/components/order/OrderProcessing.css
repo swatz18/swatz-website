@@ -12,6 +12,10 @@
 
     align-items:center;
 
+    padding:20px;
+
+    box-sizing:border-box;
+
     z-index:9999;
 
     backdrop-filter:blur(5px);
@@ -20,7 +24,9 @@
 
 .processing-card{
 
-    width:420px;
+    width:100%;
+
+    max-width:420px;
 
     background:white;
 
@@ -85,5 +91,67 @@
     color:var(--primary);
 
     font-weight:600;
+
+}
+@media (max-width:768px){
+
+    .processing-card{
+
+        padding:32px 24px;
+
+    }
+
+    .processing-heart{
+
+        font-size:46px;
+
+    }
+
+    .processing-card h2{
+
+        font-size:clamp(1.8rem,5vw,2.3rem);
+
+    }
+
+    .processing-card p{
+
+        font-size:.95rem;
+
+        margin-bottom:28px;
+
+    }
+
+    .processing-steps{
+
+        font-size:15px;
+
+        gap:16px;
+
+    }
+
+}
+@media (max-width:480px){
+
+    .processing-card{
+
+        padding:24px 20px;
+
+        border-radius:20px;
+
+    }
+
+    .processing-heart{
+
+        font-size:40px;
+
+    }
+
+    .processing-steps{
+
+        font-size:14px;
+
+        gap:14px;
+
+    }
 
 }

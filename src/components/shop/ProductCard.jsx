@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProductCard({
     id,
     image,
+    type,
     category,
     title,
     shortDescription,
@@ -13,9 +14,9 @@ export default function ProductCard({
 
     return (
 
-        <div className="product-card">
+        <div className="product-card card">
 
-            <div className="product-image">
+            <div className="product-image card-image">
 
                 {badge && (
 
@@ -38,7 +39,7 @@ export default function ProductCard({
 
                 <span className="product-category">
 
-                    {category}
+                    {type || category}
 
                 </span>
 
