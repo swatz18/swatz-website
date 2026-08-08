@@ -5,16 +5,15 @@ import {
     Mail,
     ArrowUp
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
 
     const scrollToTop = () => {
 
         window.scrollTo({
-
             top: 0,
             behavior: "smooth"
-
         });
 
     };
@@ -22,6 +21,10 @@ export default function Footer() {
     return (
 
         <footer className="footer">
+
+            {/* =========================
+                FOOTER INTRO
+            ========================= */}
 
             <div className="footer-top">
 
@@ -41,103 +44,151 @@ export default function Footer() {
 
                 <p>
 
-                    Every keepsake begins with a memory,
-                    and we're grateful to be a small part of yours.
-
-                    <br /><br />
-
-                    Thank you for choosing Swatz!
+                    Thank you for choosing Swatz! 💙
 
                 </p>
 
             </div>
+
+
+            {/* =========================
+                HELP
+            ========================= */}
 
             <div className="footer-links">
 
-                <div>
-
-                    <h4>Shop</h4>
-
-                    <a href="/">Fridge Magnets</a>
-
-                    <a href="/">Keychains</a>
-
-                    <a href="/">Badges</a>
-
-                    <a href="/">Photo Strips</a>
-
-                </div>
-
-                <div>
+                <div className="footer-help">
 
                     <h4>Help</h4>
 
-                    <a href="/">Shipping</a>
+                    <div className="footer-help-links">
 
-                    <a href="/">FAQs</a>
+                        <Link
+                            to={{
+                                pathname: "/help",
+                                hash: "#shipping"
+                            }}
+                        >
+                            Shipping
+                        </Link>
 
-                    <a href="/">Contact Us</a>
+                        <Link
+                            to={{
+                                pathname: "/help",
+                                hash: "#faq"
+                            }}
+                        >
+                            FAQs
+                        </Link>
 
-                    <a href="/">Privacy Policy</a>
+                        <Link
+                            to={{
+                                pathname: "/help",
+                                hash: "#privacy"
+                            }}
+                        >
+                            Privacy Policy
+                        </Link>
+
+                    </div>
 
                 </div>
 
-                <div>
+
+                {/* =========================
+                    CONNECT
+                ========================= */}
+
+                <div className="footer-connect-section">
 
                     <h4>Connect</h4>
 
-                    <a href="/">
-                        <Instagram size={17}/>
-                        Instagram
-                    </a>
+                    <div className="footer-connect">
 
-                    <a href="/">
-                        <MessageCircle size={17}/>
-                        WhatsApp
-                    </a>
+                        <a
+                            href="https://www.instagram.com/swatz_magnets/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
 
-                    <a href="/">
-                        <Mail size={17}/>
-                        hello@swatz.in
-                    </a>
+                            <Instagram size={17} />
+
+                            swatz_magnets
+
+                        </a>
+
+                        <a
+                            href="https://wa.me/917502131997"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <MessageCircle size={17} />
+
+                            WhatsApp
+
+                        </a>
+
+                        <a href="mailto:hello@swatz.in">
+
+                            <Mail size={17} />
+
+                            swatzmagnets@gmail.com
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
+
+            {/* =========================
+                TRUST STRIP
+            ========================= */}
+
             <div className="footer-trust">
 
-                <span>🚚 Pan India Delivery</span>
-
-                <span>💙 Handmade with Love</span>
-
-                <span>🔒 Secure Payments</span>
-
-            </div>
-
-            <div className="footer-bottom">
-
-                <p>
-
-                    Crafted with love,
-                    one memory at a time.
-
-                </p>
+                <span>
+                    🚚 Pan India Delivery
+                </span>
 
                 <span>
+                    🔒 Secure Payments
+                </span>
 
-                    © 2026 Swatz Magnets
-
+                <span>
+                    💙 Handmade with Love
                 </span>
 
             </div>
 
+
+            {/* =========================
+                FOOTER BOTTOM
+            ========================= */}
+
+            <div className="footer-bottom">
+
+                <span>
+                    © 2026 Swatz Magnets
+                </span>
+
+            </div>
+
+
+            {/* =========================
+                BACK TO TOP
+            ========================= */}
+
             <button
                 className="back-to-top"
                 onClick={scrollToTop}
+                aria-label="Back to top"
             >
 
-                <ArrowUp size={18}/>
+                <ArrowUp size={18} />
 
             </button>
 

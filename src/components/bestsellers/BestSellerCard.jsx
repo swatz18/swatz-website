@@ -1,21 +1,15 @@
-export default function BestSellerCard({
+import { Link } from "react-router-dom";
+export default function BestSellerCard({ product }) {
 
-    category,
-    title,
-    price,
-    image
-
-}){
-
-    return(
+    return (
 
         <article className="bestseller-card">
 
             <div className="bestseller-image">
 
                 <img
-                    src={image}
-                    alt={title}
+                    src={product.image}
+                    alt={product.title}
                 />
 
             </div>
@@ -24,13 +18,13 @@ export default function BestSellerCard({
 
                 <span className="category">
 
-                    {category}
+                    {product.category}
 
                 </span>
 
                 <h3>
 
-                    {title}
+                    {product.title}
 
                 </h3>
 
@@ -38,15 +32,18 @@ export default function BestSellerCard({
 
                     <span className="price">
 
-                        {price}
+                        ₹{product.price}
 
                     </span>
 
-                    <span className="action">
+                    <Link
+                        to={`/product/${product.id}`}
+                        className="action"
+                    >
 
                         Personalise →
 
-                    </span>
+                    </Link>
 
                 </div>
 
@@ -54,6 +51,6 @@ export default function BestSellerCard({
 
         </article>
 
-    )
+    );
 
 }

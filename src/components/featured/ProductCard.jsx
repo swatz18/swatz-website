@@ -1,43 +1,54 @@
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
-  return (
-    <div className="product-card">
 
-      <div className="product-image">
+    return (
 
-        {product.image ? (
-          <img src={product.image} alt={product.name} />
-        ) : (
-          <div className="image-placeholder">
-            Product Image
-          </div>
-        )}
+        <div className="product-card">
 
-      </div>
+            <div className="product-image">
 
-      <span className="product-badge">
-        {product.badge}
-      </span>
+                {product.image ? (
+                    <img
+                        src={product.image}
+                        alt={product.name}
+                    />
+                ) : (
+                    <div className="image-placeholder">
+                        Product Image
+                    </div>
+                )}
 
-      <h3>{product.name}</h3>
+            </div>
 
-      <p>{product.description}</p>
+            <span className="product-badge">
+                {product.badge}
+            </span>
 
-      <div className="product-footer">
+            <h3>
+                {product.name}
+            </h3>
 
-        <span className="price">
-          {product.price}
-        </span>
+            <p>
+                {product.description}
+            </p>
 
-        <button>
-          {product.button}
-        </button>
+            <div className="product-footer">
 
-      </div>
+                <span className="price">
+                    {product.price}
+                </span>
 
-    </div>
-  );
+                <button>
+                    {product.button}
+                </button>
+
+            </div>
+
+        </div>
+
+    );
+
 }
 
 export default ProductCard;

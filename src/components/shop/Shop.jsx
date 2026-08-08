@@ -101,7 +101,11 @@ export default function Shop() {
                             </div>
                         </div>
 
-                        <div className={`products-grid ${fade ? "show" : "hide"}`}>
+                        <div
+                            className={`products-grid ${
+                                visibleProducts.length === 1 ? "single-product" : ""
+                            } ${fade ? "show" : "hide"}`}
+                        >
 
                             {visibleProducts.map((product) => (
 

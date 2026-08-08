@@ -10,7 +10,7 @@ export default function ProductCard({
     shortDescription,
     price,
     badge
-}){
+}) {
 
     return (
 
@@ -48,6 +48,7 @@ export default function ProductCard({
                     {title}
 
                 </h3>
+
                 <p className="product-short-description">
 
                     {shortDescription}

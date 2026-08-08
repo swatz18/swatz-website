@@ -148,7 +148,7 @@
 
     grid-template-columns:repeat(auto-fit,minmax(300px,340px));
 
-    justify-content:start;
+    justify-content:center;
 
     gap:32px;
 
@@ -162,6 +162,11 @@
     transition:
         opacity .2s ease,
         transform .2s ease;
+
+}
+.products-grid.single-product{
+
+    justify-content:start;
 
 }
 
@@ -266,6 +271,12 @@
     .products-grid{
 
         gap:24px;
+        justify-items:center;
+
+    }
+    .products-grid.single-product{
+
+        justify-content:center;
 
     }
 

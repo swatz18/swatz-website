@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import "./RibbonReveal.css";
 
-import tiedRibbon from "../../assets/images/ribbon/ribbon-tied.png";
-import leftRibbon from "../../assets/images/ribbon/left-ribbon.png";
-import rightRibbon from "../../assets/images/ribbon/right-ribbon.png";
+import ribbonGif from "../../assets/images/ribbon/ribbon-swatz.gif";
+import ribbonFinal from "../../assets/images/ribbon/ribbon-tied.png";
 
 export default function RibbonReveal() {
 
     const sectionRef = useRef(null);
 
-    const [joined, setJoined] = useState(false);
-    const [wrapped, setWrapped] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
 
@@ -20,52 +18,59 @@ export default function RibbonReveal() {
 
                 if (entry.isIntersecting) {
 
-                    setJoined(true);
+                    setIsPlaying(true);
 
                 } else {
 
-                    setJoined(false);
-                    setWrapped(false);
+                    setIsPlaying(false);
 
                 }
 
             },
 
             {
-                threshold: 0.55,
+                threshold: 0.5
             }
 
         );
 
         if (sectionRef.current) {
+
             observer.observe(sectionRef.current);
+
         }
 
-        return () => observer.disconnect();
+        return () => {
+
+            observer.disconnect();
+
+        };
 
     }, []);
 
+
     useEffect(() => {
 
-        let timer;
+        if (!isPlaying) {
 
-        if (joined) {
-
-            timer = setTimeout(() => {
-
-                setWrapped(true);
-
-            }, 800);
-
-        } else {
-
-            setWrapped(false);
+            return;
 
         }
 
-        return () => clearTimeout(timer);
+        const timer = setTimeout(() => {
 
-    }, [joined]);
+            setIsPlaying(false);
+
+        }, 250);
+
+        return () => {
+
+            clearTimeout(timer);
+
+        };
+
+    }, [isPlaying]);
+
 
     return (
 
@@ -74,34 +79,10 @@ export default function RibbonReveal() {
             className="ribbon-section"
         >
 
-            {/* Split Ribbon */}
-
-            <div
-                className={`ribbon-wrapper
-                ${joined ? "join" : ""}
-                ${wrapped ? "hide" : ""}`}
-            >
-
-                <img
-                    src={leftRibbon}
-                    className="left-ribbon"
-                    alt=""
-                />
-
-                <img
-                    src={rightRibbon}
-                    className="right-ribbon"
-                    alt=""
-                />
-
-            </div>
-
-            {/* Tied Ribbon */}
-
             <img
-                src={tiedRibbon}
-                className={`tied-ribbon ${wrapped ? "show" : ""}`}
-                alt=""
+                src={isPlaying ? ribbonGif : ribbonFinal}
+                className="ribbon-gif"
+                alt="Swatz ribbon"
             />
 
         </section>

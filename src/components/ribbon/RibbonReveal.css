@@ -1,154 +1,61 @@
-.ribbon-section{
+/* =========================
+   RIBBON SECTION
+========================= */
 
-    position:relative;
+.ribbon-section {
 
-    width:100%;
+    width: 100%;
 
-    background:#fff;
+    background: var(--cream);
 
-    min-height:clamp(80px,12vw,160px);
+    display: flex;
 
-    display:flex;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
 
-    align-items:center;
+    overflow: hidden;
 
-    overflow:hidden;
+    padding: 40px 0;
 
-    padding:60px 0;
-    
 }
 
-/* ===========================
-   Split Ribbon
-=========================== */
 
-.ribbon-wrapper{
+/* =========================
+   RIBBON GIF
+========================= */
 
-    width:100%;
+.ribbon-gif {
 
-    max-width:1500px;
+    display: block;
 
-    display:flex;
+    width: 100%;
 
-    justify-content:center;
+    max-width: 1537px;
 
-    align-items:center;
+    height: auto;
 
-    transition:opacity .25s ease;
-
-    z-index:1;
 }
 
-.ribbon-wrapper.hide{
 
-    opacity:0;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* ===========================
-   Ribbon Halves
-=========================== */
+@media (max-width: 767px) {
 
-.left-ribbon,
-.right-ribbon{
+    .ribbon-section {
 
-    width:50%;
+        padding: 25px 0;
 
-    max-width:750px;
-
-    height:auto;
-
-    transition:
-        transform .9s cubic-bezier(.22,.61,.36,1);
-}
-
-/* Initial State */
-
-.left-ribbon{
-
-    transform:translateX(-120px);
-}
-
-.right-ribbon{
-
-    transform:translateX(120px);
-}
-
-/* Move Together */
-
-.ribbon-wrapper.join .left-ribbon{
-
-    transform:translateX(8px);
-}
-
-.ribbon-wrapper.join .right-ribbon{
-
-    transform:translateX(-8px);
-}
-
-/* ===========================
-   Tied Ribbon
-=========================== */
-
-.tied-ribbon{
-
-    position:absolute;
-
-    width:100%;
-
-    max-width:1500px;
-
-    height:auto;
-
-    opacity:0;
-
-    transition:opacity .25s ease;
-
-    z-index:2;
-
-    pointer-events:none;
-}
-
-.tied-ribbon.show{
-
-    opacity:1;
-}
-@media (max-width: 767px){
-
-    .ribbon-section{
-
-        min-height:180px;
-
-        padding:20px 0;
     }
 
-    .left-ribbon,
-    .right-ribbon,
-    .tied-ribbon{
+    .ribbon-gif {
 
-        width:115%;
-        max-width:none;
-    }
+        width: 120%;
 
-    .left-ribbon{
+        max-width: none;
 
-        transform:translateX(-40px);
-    }
-
-    .right-ribbon{
-
-        transform:translateX(40px);
-    }
-
-    .ribbon-wrapper.join .left-ribbon{
-
-        transform:translateX(4px);
-    }
-
-    .ribbon-wrapper.join .right-ribbon{
-
-        transform:translateX(-4px);
     }
 
 }
