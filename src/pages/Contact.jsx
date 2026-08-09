@@ -1,8 +1,14 @@
+import ContactComponent from "../components/contact/Contact";
+import Footer from "../components/footer/Footer";
+
 export default function Contact() {
 
     return (
 
-        <h1>Contact Page</h1>
+        <>
+            <ContactComponent />
+            <Footer />
+        </>
 
     );
 

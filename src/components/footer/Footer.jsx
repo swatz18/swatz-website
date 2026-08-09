@@ -62,7 +62,17 @@ export default function Footer() {
                     <h4>Help</h4>
 
                     <div className="footer-help-links">
-
+                        
+                        
+                        <Link
+                            to={{
+                                pathname: "/contact"
+                            }}
+                        >
+                            Contact Us
+                        </Link>
+                        
+                       
                         <Link
                             to={{
                                 pathname: "/help",
@@ -129,12 +139,13 @@ export default function Footer() {
 
                         </a>
 
-                        <a href="mailto:hello@swatz.in">
-
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=swatzmagnets@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <Mail size={17} />
-
                             swatzmagnets@gmail.com
-
                         </a>
 
                     </div>
