@@ -119,7 +119,7 @@
 
 .card-content .featured-link{
 
-    color:#0259DD;
+    color:var(--primary);
 
     font-weight:600;
 

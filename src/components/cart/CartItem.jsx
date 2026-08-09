@@ -75,11 +75,6 @@ export default function CartItem({item,index}) {
 
                 <div className="cart-item-buttons">
 
-                    <button>
-
-                        Edit
-
-                    </button>
 
                     <button
 

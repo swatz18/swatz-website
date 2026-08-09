@@ -54,6 +54,8 @@
 
     margin-bottom:10px;
 
+     font-size: 2rem;
+
 }
 
 .processing-card p{
@@ -62,6 +64,9 @@
 
     margin-bottom:35px;
 
+}
+.processing-card p {
+    font-size: 0.85rem !important;
 }
 
 .processing-steps{
@@ -107,10 +112,8 @@
 
     }
 
-    .processing-card h2{
-
-        font-size:clamp(1.8rem,5vw,2.3rem);
-
+    .processing-card h2 {
+        font-size: 1.4rem !important;
     }
 
     .processing-card p{

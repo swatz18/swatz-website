@@ -88,81 +88,7 @@ export default function About() {
                     </div>
 
                 </section>
-                {/* =========================
-                    WHY SMALL THINGS
-                ========================= */}
-
-                <section className="about-small-things">
-
-                  <div className="about-small-content">
-
-                      <span className="about-section-label">
-                          THE LITTLE THINGS
-                      </span>
-
-                      <h2>
-                          Small things can
-                          <br />
-                          hold big memories.
-                      </h2>
-
-                      <p>
-                          We often focus on the bigger things and forget
-                          to notice the little ones. A tiny photograph,
-                          a familiar face, or a silly moment might look
-                          small, but can hold some of our sweetest memories.
-                          That's what I wanted Swatz to celebrate.
-                      </p>
-
-                      <div className="about-quote">
-                          Small enough to keep. Meaningful enough to stay.
-                      </div>
-
-                  </div>
-
-                </section>
-                {/* =========================
-                    WHY MAGNETS
-                ========================= */}
-
-                <section className="about-magnets">
-
-                    <div className="about-magnets-content">
-
-                        <span className="about-section-label">
-                            WHY MAGNETS?
-                        </span>
-
-                        <h2>
-                            Something small,
-                            <br />
-                            personal, and made to stay.
-                        </h2>
-
-                        <div className="about-magnets-copy">
-
-                            <p>
-                                I wanted Swatz to live in a very specific
-                                little space — magnets. Something you can
-                                keep around every day, somewhere you
-                                naturally look, and something that can turn
-                                a favourite photograph or memory into a
-                                little part of your everyday life.
-                            </p>
-
-                            <p>
-                                A magnet felt like the perfect place for that.
-                                It isn't something you put away in a cupboard
-                                or bring out only on special occasions.
-                                It simply stays there, quietly holding a
-                                memory close.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </section>
+                
                 {/* =========================
                     WORKSPACE
                 ========================= */}
@@ -185,16 +111,23 @@ export default function About() {
                         </span>
 
                         <h2>
-                            One little memory
-                            <br />
-                            at a time.
+                            My little corner
+                           
+                            
                         </h2>
 
                         <p>
-                            Every Swatz piece starts here — from choosing
-                            the photo to creating the final keepsake.
-                            It's a small workspace, but it holds a lot
-                            of stories.
+                            This little workspace has seen countless photographs, sketches, experiments, mistakes and happy little accidents. 
+                            It's where I play around with ideas until something finally feels right.
+                        </p>
+                         <br />
+                        <p>
+                           It’s not a fancy studio, and I don't think it needs to be. It's simply my little space to create, experiment 
+                           and make things that I'm genuinely proud to send out into the world.
+                        </p>
+                         <br />
+                        <p>
+                           It's a small workspace, but it holds a lot of heart.
                         </p>
 
                     </div>
@@ -219,13 +152,16 @@ export default function About() {
                         </h2>
 
                         <p>
-                            I hope every Swatz piece finds its way to
-                            someone who matters to you — and becomes
-                            a little reminder of a memory worth keeping.
+                            While we often focus on the bigger things, sometimes we forget to notice the little ones.
+                        
+                            A tiny photograph. A familiar face. A silly moment. A memory that might look small to someone else but means the world to you.
+                        </p>
+                        <p>
+                            That's what I wanted Swatz to celebrate.
                         </p>
 
                         <div className="about-closing-sign">
-                            — Swatz
+                            — Swatz Magnets
                         </div>
 
                     </div>

@@ -14,7 +14,7 @@ const steps = [
         icon: ImagePlus,
         title: "Upload Your Photo",
         description:
-            "Share your favourite picture and choose the keepsake you'd love to personalise."
+            "Choose the keepsake you'd love to personalise, upload picture and place your order."
     },
 
     {

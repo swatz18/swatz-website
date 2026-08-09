@@ -3,7 +3,7 @@ import BestSellerCard from "./BestSellerCard";
 import { products } from "../shop/products";
 import { Link } from "react-router-dom";
 
-const bestsellerIds = [3, 4, 5, 6];
+const bestsellerIds = [1, 2, 5, 7];
 
 const bestsellerProducts = products.filter(product =>
     bestsellerIds.includes(product.id)

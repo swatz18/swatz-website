@@ -342,6 +342,31 @@ export default function Help() {
                     </div>
 
                 </section>
+                <section className="help-section help-whatsapp">
+
+                    <span className="help-section-label">
+                        STILL NEED HELP?
+                    </span>
+
+                    <h2>
+                        We're just a message away.
+                    </h2>
+
+                    <p>
+                        Didn't find what you were looking for?
+                        Reach out to us on WhatsApp and we'll be happy to help.
+                    </p>
+
+                    <a
+                        href="https://wa.me/917502131997"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="help-whatsapp-button"
+                    >
+                        💬 Connect via WhatsApp
+                    </a>
+
+                </section>
 
             </main>
 

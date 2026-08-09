@@ -309,12 +309,6 @@ export default function ProductDetails() {
 
                         </button>
 
-                        <button className="buy-btn">
-
-                            ✨ Make it Yours
-
-                        </button>
-
                     </div>
 
                 </div>

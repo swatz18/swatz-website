@@ -600,3 +600,89 @@
     }
 
 }
+.help-whatsapp {
+
+    background:var(--primary);
+
+    text-align:center;
+
+    padding:75px 20px 85px;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+
+
+}
+
+
+.help-whatsapp .help-section-label {
+
+    color:var(--gold);
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    letter-spacing:2.5px;
+}
+
+
+.help-whatsapp h2 {
+
+    margin:18px 0 0;
+
+    color:var(--white);
+
+    font-size:clamp(2.3rem,5vw,3.8rem);
+
+    line-height:1.1;
+}
+
+
+.help-whatsapp p {
+
+    max-width:520px;
+
+    margin:20px auto 30px;
+
+    color:var(--cream);
+
+    font-size:.95rem;
+
+    line-height:1.7;
+}
+
+
+.help-whatsapp-button {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:13px 24px;
+
+    border:2px solid var(--cream);
+
+    border-radius:var(--radius-button);
+
+    background:transparent;
+
+    color:var(--cream);
+
+    text-decoration:none;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+}
+
+
+.help-whatsapp-button:hover {
+
+    background:var(--cream);
+
+    color:var(--primary);
+}

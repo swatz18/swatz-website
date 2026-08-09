@@ -326,9 +326,10 @@
 
     border-radius:999px;
 
-    background:var(--primary);
+    color: var(--primary);
+    border: 2px solid var(--primary);
 
-    color:var(--white);
+    color:var(--primary);
 
     font-weight:600;
 
@@ -340,7 +341,8 @@
 
 .continue-whatsapp-btn:hover{
 
-    background:var(--primary-light);
+    background: var(--primary);
+    color: var(--white);
 
 }
 

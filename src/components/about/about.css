@@ -260,74 +260,6 @@
     }
 
 }
-/* =========================
-   WHY SMALL THINGS
-========================= */
-
-.about-small-things {
-
-     background:var(--primary);
-
-    padding:110px 20px;
-
-    display:flex;
-
-    justify-content:center;
-
-    text-align:center;
-}
-
-
-.about-small-content {
-
-    max-width:760px;
-
-}
-
-
-.about-small-content .about-section-label {
-
-    margin-bottom:22px;
-    color:var(--gold);
-
-}
-
-
-.about-small-content h2 {
-
-    margin:0;
-
-    color:var(--white);
-
-    font-size:clamp(2.8rem,6vw,4.8rem);
-
-    line-height:1.08;
-
-    letter-spacing:-1.5px;
-
-}
-
-
-.about-small-content p {
-
-    max-width:620px;
-
-    margin:24px auto 0;
-
-    color:var(--cream);
-
-    font-size:1rem;
-
-    line-height:1.8;
-
-}
-
-
-.about-small-content p + p {
-
-    margin-top:14px;
-
-}
 
 
 /* =========================
@@ -384,121 +316,7 @@
     }
 
 }
-/* =========================
-   WHY MAGNETS
-========================= */
 
-.about-magnets {
-
-    background:var(--cream);
-
-    padding:85px 20px;
-
-    display:flex;
-
-    justify-content:center;
-
-    text-align:center;
-
-}
-
-
-.about-magnets-content {
-
-    max-width:780px;
-
-}
-
-
-.about-magnets .about-section-label {
-
-    color:var(--gold);
-
-    margin-bottom:20px;
-
-}
-
-
-.about-magnets h2 {
-
-    margin:0;
-
-    color:var(--text);
-
-    font-size:clamp(2.7rem,6vw,4.6rem);
-
-    line-height:1.08;
-
-    letter-spacing:-1.5px;
-
-}
-
-
-.about-magnets-copy {
-
-    max-width:650px;
-
-    margin:32px auto 0;
-
-}
-
-
-.about-magnets-copy p {
-
-    color:var(--text-light);
-
-    font-size:1rem;
-
-    line-height:1.75;
-
-    margin:0 0 16px;
-
-}
-
-
-.about-magnets-copy p:last-child {
-
-    margin-bottom:0;
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:700px){
-
-    .about-magnets {
-
-        padding:65px 20px;
-
-    }
-
-
-    .about-magnets h2 {
-
-        font-size:clamp(2.4rem,10vw,3.5rem);
-
-    }
-
-
-    .about-magnets-copy {
-
-        margin-top:26px;
-
-    }
-
-
-    .about-magnets-copy p {
-
-        font-size:.95rem;
-
-        line-height:1.7;
-
-    }
-
-}
 /* =========================
    WORKSPACE
 ========================= */
@@ -514,7 +332,7 @@
 
     display:grid;
 
-    grid-template-columns:1.15fr .85fr;
+    grid-template-columns:1fr 1fr;
 
     align-items:center;
 
@@ -524,17 +342,12 @@
 
 
 .about-workspace-image {
-
-    width:100%;
-
-    height:480px;
-
-    overflow:hidden;
-
-    border-radius:var(--radius-card);
-
-    background:var(--cream);
-
+    width: min(100%, 380px);
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--cream);
+    margin: 0 auto;
 }
 
 
@@ -546,7 +359,7 @@
 
     display:block;
 
-    object-fit:cover;
+    object-fit:contain;
 
 }
 
@@ -608,11 +421,9 @@
 
 
     .about-workspace-image {
-
-        height:auto;
-
-        aspect-ratio:16 / 10;
-
+        width: min(100%, 320px);
+        aspect-ratio: 3 / 4;
+        margin: 0 auto;
     }
 
 
