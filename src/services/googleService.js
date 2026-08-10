@@ -44,13 +44,13 @@ export async function saveOrder(order) {
 
         });
 
-        const response = await fetch("/api/orders", {
-
-            method: "POST",
-
-            body: formData
-
-        });
+        const response = await fetch(
+            "https://swatz-website.vercel.app/api/orders",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
         
         return await response.json();
 
