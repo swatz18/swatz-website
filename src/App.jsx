@@ -13,7 +13,7 @@ function App() {
     return (
         <CartProvider>
            
-
+             <BrowserRouter basename="/swatz-website">
                 <Routes>
 
                     <Route
@@ -48,7 +48,7 @@ function App() {
                     />
 
                 </Routes>
-
+            </BrowserRouter>
             
         </CartProvider>
     );
