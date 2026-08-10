@@ -12,7 +12,7 @@ function App() {
 
     return (
         <CartProvider>
-            <BrowserRouter>
+           
 
                 <Routes>
 
@@ -49,7 +49,7 @@ function App() {
 
                 </Routes>
 
-            </BrowserRouter>
+            
         </CartProvider>
     );
 
