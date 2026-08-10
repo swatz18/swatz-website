@@ -4,7 +4,7 @@ import TestimonialCard from "./TestimonialCard";
 const testimonials = [
 
     {
-        image: "${import.meta.env.BASE_URL}images/testimonials/customer1.jpg",
+        image: '${import.meta.env.BASE_URL}images/testimonials/customer1.jpg',
         name: "Priya S.",
         place: "Coimbatore",
         review:
@@ -12,7 +12,7 @@ const testimonials = [
     },
 
     {
-        image: "${import.meta.env.BASE_URL}images/testimonials/customer2.jpg",
+        image: '${import.meta.env.BASE_URL}images/testimonials/customer2.jpg',
         name: "Rahul K.",
         place: "Chennai",
         review:
@@ -20,7 +20,7 @@ const testimonials = [
     },
 
     {
-        image: "${import.meta.env.BASE_URL}images/testimonials/customer3.jpg",
+        image: '${import.meta.env.BASE_URL}images/testimonials/customer3.jpg',
         name: "Nisha R.",
         place: "Bangalore",
         review:
@@ -28,7 +28,7 @@ const testimonials = [
     },
 
     {
-        image: "${import.meta.env.BASE_URL}images/testimonials/customer4.jpg",
+        image: '${import.meta.env.BASE_URL}images/testimonials/customer4.jpg',
         name: "Arjun M.",
         place: "Hyderabad",
         review:
@@ -36,7 +36,7 @@ const testimonials = [
     },
 
     {
-        image: "${import.meta.env.BASE_URL}images/testimonials/customer5.jpg",
+        image: '${import.meta.env.BASE_URL}images/testimonials/customer5.jpg',
         name: "Deepa V.",
         place: "Madurai",
         review:
