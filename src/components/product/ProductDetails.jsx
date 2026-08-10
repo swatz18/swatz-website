@@ -282,8 +282,7 @@ export default function ProductDetails() {
 
                             rows="4"
 
-                            placeholder="Example:
-                            Please arrange the photos in a collage style."
+                            placeholder="Example: Please arrange the photos in a collage style."
                             value={orderNotes}
 
                             onChange={(e) =>
