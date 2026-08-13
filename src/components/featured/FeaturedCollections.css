@@ -59,7 +59,11 @@
     height:100%;
 
 }
-
+.featured-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
 
 /* Image */
 

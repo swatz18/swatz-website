@@ -75,7 +75,10 @@
 
     cursor:pointer;
 }
-
+.bestseller-card {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 /* Image */

@@ -1,4 +1,8 @@
-import babyMagnet from "../../assets/images/products/baby-magnet.jpg";
+// import babyMagnet from "../../assets/images/products/baby-magnet.jpg";
+
+import M2 from "../../assets/images/products/M2.png";
+import M3 from "../../assets/images/products/M3.png";
+import M4 from "../../assets/images/products/M4.png";
 import familyKeychain from "../../assets/images/products/family-keychain.jpg";
 import weddingBadge from "../../assets/images/products/wedding-badge.jpg";
 import acrylicMagnet from "../../assets/images/products/acrylic-magnet.jpg";
@@ -39,7 +43,13 @@ export const products = [
 
     badge: "MOST LOVED",
 
-    image: babyMagnet,
+    image: M2,
+
+    images: [
+    M2,
+    M3,
+    M4,
+],
 
     features: [
         "58 mm Round Magnet",

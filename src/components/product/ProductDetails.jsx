@@ -21,42 +21,38 @@ export default function ProductDetails() {
 
     }
     const [quantity, setQuantity] = useState(1);
+    const [addingToCart, setAddingToCart] = useState(false);
     const [selectedVariant, setSelectedVariant] = useState(
         product.variants?.[0] || null
     );
 
     const [selectedImages, setSelectedImages] = useState([]);
+    const [activeImage, setActiveImage] = useState(0);
 
     const [orderNotes, setOrderNotes] = useState("");
+    
+
     const handleAddToCart = () => {
 
-    addItem({
+        setAddingToCart(true);
 
-        id: product.id,
+        addItem({
+            id: product.id,
+            title: product.title,
+            category: product.category,
+            type: product.type,
+            variant: selectedVariant?.label ?? "",
+            variantQuantity: selectedVariant?.quantity ?? "",
+            image: product.image,
+            price: selectedVariant?.price ?? product.price,
+            quantity,
+            photos: selectedImages,
+            notes: orderNotes
+        });
 
-        title: product.title,
-
-        category: product.category,
-
-        type: product.type,
-
-        variant: selectedVariant?.label ?? "",
-        variantQuantity: selectedVariant?.quantity ?? "",
-
-        image: product.image,
-
-        price: selectedVariant?.price ?? product.price,
-
-        quantity,
-
-        photos: selectedImages,
-
-        notes: orderNotes
-
-    });
-
-        navigate("/cart");
-
+        setTimeout(() => {
+            navigate("/cart");
+        }, 400);
     };
     
     
@@ -97,10 +93,75 @@ export default function ProductDetails() {
 
                 <div className="product-detail-image">
 
-                    <img
-                        src={product.image}
-                        alt={product.title}
-                    />
+                    <div className="product-main-image">
+
+                        <img
+                            src={
+                                product.images?.[activeImage] ||
+                                product.image
+                            }
+                            alt={product.title}
+                        />
+
+                        {product.images && product.images.length > 1 && (
+
+                            <>
+                                <button
+                                    type="button"
+                                    className="image-arrow image-arrow-left"
+                                    onClick={() =>
+                                        setActiveImage(
+                                            activeImage === 0
+                                                ? product.images.length - 1
+                                                : activeImage - 1
+                                        )
+                                    }
+                                    aria-label="Previous image"
+                                >
+                                    ‹
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="image-arrow image-arrow-right"
+                                    onClick={() =>
+                                        setActiveImage(
+                                            activeImage === product.images.length - 1
+                                                ? 0
+                                                : activeImage + 1
+                                        )
+                                    }
+                                    aria-label="Next image"
+                                >
+                                    ›
+                                </button>
+                            </>
+
+                        )}
+
+                    </div>
+
+                    {product.images && product.images.length > 1 && (
+
+                        <div className="image-dots">
+
+                            {product.images.map((_, index) => (
+
+                                <button
+                                    key={index}
+                                    type="button"
+                                    className={`image-dot ${
+                                        activeImage === index ? "active" : ""
+                                    }`}
+                                    onClick={() => setActiveImage(index)}
+                                    aria-label={`View image ${index + 1}`}
+                                />
+
+                            ))}
+
+                        </div>
+
+                    )}
 
                 </div>
 
@@ -218,15 +279,10 @@ export default function ProductDetails() {
 
                         <h4>
 
-                            Your Memories
+                            Upload Image 
 
                         </h4>
 
-                        <p>
-
-                            Upload one or more photos for personalization.
-
-                        </p>
 
                         <label className="upload-button">
 
@@ -297,15 +353,14 @@ export default function ProductDetails() {
                     <div className="product-detail-actions">
 
                         <button
-
                             className="cart-btn"
-
                             onClick={handleAddToCart}
-
+                            disabled={addingToCart}
                         >
-
-                            🛒 Add to Cart
-
+                            {addingToCart
+                                ? "✓ Added to Cart"
+                                : "🛒 Add to Cart"
+                            }
                         </button>
 
                     </div>

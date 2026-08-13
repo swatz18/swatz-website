@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ProductCard({
     id,
+    images,
     image,
     type,
     category,
@@ -14,7 +15,10 @@ export default function ProductCard({
 
     return (
 
-        <div className="product-card card">
+        <Link
+            to={`/product/${id}`}
+            className="product-card card"
+        >
 
             <div className="product-image card-image">
 
@@ -29,7 +33,7 @@ export default function ProductCard({
                 )}
 
                 <img
-                    src={image}
+                    src={images?.[0] || image}
                     alt={title}
                 />
 
@@ -63,20 +67,15 @@ export default function ProductCard({
 
                     </span>
 
-                    <Link
-                        to={`/product/${id}`}
-                        className="product-button"
-                    >
-
+                    <span className="product-button">
                         Create Yours →
-
-                    </Link>
+                    </span>
 
                 </div>
 
             </div>
 
-        </div>
+        </Link>
 
     );
 

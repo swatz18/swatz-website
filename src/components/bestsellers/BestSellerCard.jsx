@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+
 export default function BestSellerCard({ product }) {
 
     return (
 
-        <article className="bestseller-card">
+        <Link
+            to={`/product/${product.id}`}
+            className="bestseller-card"
+        >
 
             <div className="bestseller-image">
 
@@ -36,20 +40,17 @@ export default function BestSellerCard({ product }) {
 
                     </span>
 
-                    <Link
-                        to={`/product/${product.id}`}
-                        className="action"
-                    >
+                    <span className="action">
 
                         Personalise →
 
-                    </Link>
+                    </span>
 
                 </div>
 
             </div>
 
-        </article>
+        </Link>
 
     );
 

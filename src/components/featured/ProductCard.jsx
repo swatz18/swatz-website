@@ -1,10 +1,14 @@
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
 
     return (
 
-        <div className="product-card">
+        <Link
+            to={`/product/${product.id}`}
+            className="product-card"
+        >
 
             <div className="product-image">
 
@@ -39,13 +43,13 @@ function ProductCard({ product }) {
                     {product.price}
                 </span>
 
-                <button>
+                <span className="product-button">
                     {product.button}
-                </button>
+                </span>
 
             </div>
 
-        </div>
+        </Link>
 
     );
 

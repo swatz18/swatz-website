@@ -1,5 +1,5 @@
 import "./Shop.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import ProductCard from "./ProductCard";
@@ -21,6 +21,7 @@ export default function Shop() {
     const categoryFromUrl = searchParams.get("category");
     const [visibleProducts, setVisibleProducts] = useState(products);
     const [fade, setFade] = useState(true);    
+    const categoryRefs = useRef({});
     useEffect(() => {
 
         window.scrollTo({
@@ -36,6 +37,30 @@ export default function Shop() {
         }
 
     }, [categoryFromUrl]);  
+
+    useEffect(() => {
+
+        if (
+            categoryFromUrl &&
+            categories.includes(categoryFromUrl)
+        ) {
+
+            const selectedPill =
+                categoryRefs.current[categoryFromUrl];
+
+            if (selectedPill) {
+
+                selectedPill.scrollIntoView({
+                    behavior: "smooth",
+                    inline: "center",
+                    block: "nearest"
+                });
+
+            }
+
+        }
+
+    }, [categoryFromUrl]);
 
     useEffect(() => {
 
@@ -88,6 +113,9 @@ export default function Shop() {
 
                                     <button
                                         key={category}
+                                        ref={(el) => {
+                                            categoryRefs.current[category] = el;
+                                        }}
                                         onClick={() => setSelectedCategory(category)}
                                         className={`category-pill ${
                                             selectedCategory === category ? "active" : ""

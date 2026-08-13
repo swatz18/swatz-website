@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
-export default function FeaturedCard({
 
+export default function FeaturedCard({
     image,
     title,
     category,
     description
-
 }) {
 
     return (
 
-        <div className="featured-card card">
+        <Link
+            to={`/shop?category=${encodeURIComponent(category)}`}
+            className="featured-card card"
+        >
 
             <div className="image-wrapper card-image">
 
@@ -27,18 +29,15 @@ export default function FeaturedCard({
 
                 <p>{description}</p>
 
-                <Link
-                    to={`/shop?category=${encodeURIComponent(category)}`}
-                    className="featured-link"
-                >
+                <span className="featured-link">
 
                     Explore →
 
-                </Link>
+                </span>
 
             </div>
 
-        </div>
+        </Link>
 
     );
 

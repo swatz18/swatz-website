@@ -13,6 +13,10 @@
     text-align:left;
 
 }
+.product-card {
+    text-decoration: none;
+    color: inherit;
+}
 
 .product-card:hover{
 

@@ -88,13 +88,38 @@ export default function Cart() {
 
         );
 
-        window.open(
+        const phone = "917502131997";
 
-            `https://wa.me/917502131997?text=${message}`,
+        const whatsappAppUrl =
+            `whatsapp://send?phone=${phone}&text=${message}`;
 
-            "_blank"
+        const whatsappWebUrl =
+            `https://wa.me/${phone}?text=${message}`;
 
-        );
+        const isMobile =
+            /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (isMobile) {
+
+            // Mobile → try WhatsApp app
+            window.location.href = whatsappAppUrl;
+
+            // Fallback → WhatsApp Web
+            setTimeout(() => {
+
+                window.location.href = whatsappWebUrl;
+
+            }, 1200);
+
+        } else {
+
+            // Desktop → WhatsApp Web
+            window.open(
+                whatsappWebUrl,
+                "_blank"
+            );
+
+        }
 
     };
     const handleCheckout = async () => {

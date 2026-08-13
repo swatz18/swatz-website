@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CartPage from "./pages/Cart";
 import Help from "./pages/Help";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 function App() {
 
@@ -14,40 +15,43 @@ function App() {
         <CartProvider>
            
              <BrowserRouter basename="/swatz-website">
-                <Routes>
+                <>
+                    <ScrollToTop />
+                    <Routes>
 
-                    <Route
-                        path="/"
-                        element={<Home />}
-                    />
+                        <Route
+                            path="/"
+                            element={<Home />}
+                        />
 
-                    <Route
-                        path="/shop"
-                        element={<ShopPage />}
-                    />
-                    <Route
-                        path="/product/:id"
-                        element={<Product />}
-                    />
-                    <Route
-                        path="/about"
-                        element={<About />}
-                    />
+                        <Route
+                            path="/shop"
+                            element={<ShopPage />}
+                        />
+                        <Route
+                            path="/product/:id"
+                            element={<Product />}
+                        />
+                        <Route
+                            path="/about"
+                            element={<About />}
+                        />
 
-                    <Route
-                        path="/contact"
-                        element={<Contact />}
-                    />
-                    <Route
-                        path="/help"
-                        element={<Help />}
-                    />
-                    <Route
-                        path="/cart"
-                        element={<CartPage />}
-                    />
+                        <Route
+                            path="/contact"
+                            element={<Contact />}
+                        />
+                        <Route
+                            path="/help"
+                            element={<Help />}
+                        />
+                        <Route
+                            path="/cart"
+                            element={<CartPage />}
+                        />
 
-                </Routes>
+                    </Routes>
+                </>    
             </BrowserRouter>
             
         </CartProvider>
