@@ -18,10 +18,19 @@ export const config = {
 export default async function handler(req, res) {
 
     // CORS
-    res.setHeader(
-        "Access-Control-Allow-Origin",
-        "https://swatz18.github.io"
-    );
+    const allowedOrigins = [
+        "https://swatz18.github.io",
+        "http://localhost:3000"
+    ];
+
+    const origin = req.headers.origin;
+
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader(
+            "Access-Control-Allow-Origin",
+            origin
+        );
+    }
 
     res.setHeader(
         "Access-Control-Allow-Methods",
@@ -35,9 +44,7 @@ export default async function handler(req, res) {
 
     // Handle browser preflight request
     if (req.method === "OPTIONS") {
-
         return res.status(200).end();
-
     }
 
     if (req.method !== "POST") {
