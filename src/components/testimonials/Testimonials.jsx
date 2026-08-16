@@ -28,7 +28,7 @@ const testimonials = [
     },
 
     {
-       image: `${import.meta.env.BASE_URL}images/testimonials/customer4.jpg`,
+       image: `${import.meta.env.BASE_URL}images/testimonials/customer4.jpeg`,
         name: "Priya",
         place: "Srivillipudhur",
         review:
