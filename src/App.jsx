@@ -14,7 +14,7 @@ function App() {
     return (
         <CartProvider>
            
-             <BrowserRouter basename="/swatz-website">
+             <BrowserRouter>
                 <>
                     <ScrollToTop />
                     <Routes>
