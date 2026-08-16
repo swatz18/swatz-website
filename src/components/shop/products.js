@@ -379,7 +379,7 @@ export const products = [
         variants: [
             {
                 label: "44 mm",
-                price: 99,
+                price: 49,
                 images: keychainImages
             }
         ],
