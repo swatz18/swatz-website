@@ -4,7 +4,9 @@
 
 .ribbon-section {
 
-    width: 100%;
+    width: calc(100% - 40px);
+
+    margin: 10px auto;
 
     background: var(--cream);
 
@@ -16,7 +18,9 @@
 
     overflow: hidden;
 
-    padding: 40px 0;
+    padding: 10px 0;
+
+    border-radius: 15px;
 
 }
 

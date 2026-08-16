@@ -10,6 +10,8 @@ export default function ProductCard({
     title,
     shortDescription,
     price,
+    priceLabel,
+    variants,
     badge
 }) {
 
@@ -63,12 +65,21 @@ export default function ProductCard({
 
                     <span className="product-price">
 
-                        ₹{price}
+                        {priceLabel ||
+                            (variants?.length > 1
+                                ? `From ₹${Math.min(...variants.map(v => v.price))}`
+                                : `₹${price}`)
+                        }
 
                     </span>
 
                     <span className="product-button">
-                        Create Yours →
+
+                        {variants?.length > 1
+                            ? "Choose Sizes →"
+                            : "Create Yours →"
+                        }
+
                     </span>
 
                 </div>

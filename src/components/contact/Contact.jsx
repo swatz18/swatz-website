@@ -1,12 +1,13 @@
 import "./Contact.css";
 import Navbar from "../layout/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Contact() {
     const [state, handleSubmit] = useForm("xbgrdvkn");
     
     const formRef = useRef(null);
+    const [errors, setErrors] = useState({});
     useEffect(() => {
 
             if (state.succeeded) {
@@ -16,6 +17,46 @@ export default function Contact() {
             }
 
         }, [state.succeeded]);
+
+    const validateForm = (form) => {
+
+        const newErrors = {};
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const reason = form.reason.value;
+        const message = form.message.value.trim();
+
+        if (!name) {
+            newErrors.name = "Please enter your name.";
+        }
+
+        if (!email) {
+            newErrors.email = "Please enter your email address.";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            newErrors.email = "Please enter a valid email address.";
+        }
+
+        if (!phone) {
+            newErrors.phone = "Please enter your phone number.";
+        } else if (!/^[6-9]\d{9}$/.test(phone)) {
+            newErrors.phone =
+                "Please enter a valid 10-digit Indian mobile number.";
+        }
+
+        if (!reason) {
+            newErrors.reason = "Please select an option.";
+        }
+
+        if (!message) {
+            newErrors.message = "Please enter your message.";
+        }
+
+        setErrors(newErrors);
+
+        return Object.keys(newErrors).length === 0;
+    };    
 
     return (
 
@@ -106,13 +147,22 @@ export default function Contact() {
                         <form
                             ref={formRef}
                             className="contact-form"
-                            onSubmit={handleSubmit}
+                            onSubmit={(e) => {
+
+                                if (!validateForm(e.currentTarget)) {
+                                    e.preventDefault();
+                                    return;
+                                }
+
+                                handleSubmit(e);
+
+                            }}
                         >
 
                             <div className="contact-field">
 
                                 <label htmlFor="name">
-                                    Your name
+                                    Your name <span className="required">*</span>
                                 </label>
 
                                 <input
@@ -122,6 +172,11 @@ export default function Contact() {
                                     placeholder="Enter your name"
                                     required
                                 />
+                                {errors.name && (
+                                    <p className="field-error">
+                                        {errors.name}
+                                    </p>
+                                )}
 
                             </div>
 
@@ -129,7 +184,7 @@ export default function Contact() {
                             <div className="contact-field">
 
                                 <label htmlFor="email">
-                                    Email address
+                                    Email address <span className="required">*</span>
                                 </label>
 
                                 <input
@@ -137,38 +192,48 @@ export default function Contact() {
                                     name="email"
                                     type="email"
                                     placeholder="you@example.com"
-                                    required
                                 />
-                                <ValidationError
-                                    prefix="Email"
-                                    field="email"
-                                    errors={state.errors}
-                                />
+
+                                {errors.email && (
+                                    <p className="field-error">
+                                        {errors.email}
+                                    </p>
+                                )}
 
                             </div>
 
 
                             <div className="contact-field">
 
-                                <label htmlFor="phone">
-                                    Phone number
-                                    <span>Optional</span>
+                               <label htmlFor="phone">
+                                    Phone number <span className="required">*</span>
                                 </label>
 
                                 <input
                                     id="phone"
                                     name="phone"
                                     type="tel"
-                                    placeholder="Enter your phone number"
+                                    placeholder="Enter your 10-digit phone number"
+                                    maxLength="10"
+                                    inputMode="numeric"
+                                    onChange={(e) => {
+                                        e.target.value = e.target.value.replace(/\D/g, "");
+                                    }}
                                 />
+
+                                {errors.phone && (
+                                    <p className="field-error">
+                                        {errors.phone}
+                                    </p>
+                                )}
 
                             </div>
 
 
                             <div className="contact-field">
 
-                                <label htmlFor="reason">
-                                    What can we help you with?
+                               <label htmlFor="reason">
+                                    What can we help you with? <span className="required">*</span>
                                 </label>
 
                                 <select
@@ -202,6 +267,11 @@ export default function Contact() {
                                     </option>
 
                                 </select>
+                                {errors.reason && (
+                                    <p className="field-error">
+                                        {errors.reason}
+                                    </p>
+                                )}
 
                             </div>
 
@@ -209,7 +279,7 @@ export default function Contact() {
                             <div className="contact-field">
 
                                 <label htmlFor="message">
-                                    Your message
+                                    Your message <span className="required">*</span>
                                 </label>
 
                                 <textarea
@@ -219,6 +289,11 @@ export default function Contact() {
                                     placeholder="Tell us a little about what you have in mind..."
                                     required
                                 />
+                                {errors.message && (
+                                    <p className="field-error">
+                                        {errors.message}
+                                    </p>
+                                )}
 
                             </div>
 

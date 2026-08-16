@@ -2,9 +2,9 @@ import "./FeaturedCollections.css";
 import FeaturedCard from "./FeaturedCard";
 
 // Temporary Images
-import magnet from "../../assets/images/products/magnet.jpg";
-import keychain from "../../assets/images/products/keychain.jpg";
-import badge from "../../assets/images/products/badge.jpg";
+import M1 from "../../assets/images/products/FM 58mm 1.jpg";
+import K1 from "../../assets/images/products/KC 44mm 1.jpg";
+import PB3 from "../../assets/images/products/PB 44mm 3.jpg";
 
 export default function FeaturedCollections() {
 
@@ -27,24 +27,24 @@ export default function FeaturedCollections() {
                 <div className="featured-grid">
 
                     <FeaturedCard
-                        image={magnet}
+                        image={M1}
                         title="Fridge Magnets"
                         category="Magnets"
                         description="Personalised magnets that celebrates every memory."
                     />
 
                     <FeaturedCard
-                        image={keychain}
+                        image={K1}
                         title="Keychains"
                         category="Keychains"
                         description="Carry your favourite moments wherever you go."
                     />
 
                     <FeaturedCard
-                        image={badge}
+                        image={PB3}
                         title="Pin Badges"
                         category="Pin Badges"
-                        description="Tiny accessories with big personality."
+                        description="Turn your favourite moments into wearable keepsakes."
                     />
 
                 </div>

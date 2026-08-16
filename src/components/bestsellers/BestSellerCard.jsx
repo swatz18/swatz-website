@@ -36,13 +36,22 @@ export default function BestSellerCard({ product }) {
 
                     <span className="price">
 
-                        ₹{product.price}
+                        {product.priceLabel ||
+                            (product.variants?.length > 1
+                                ? `From ₹${Math.min(
+                                    ...product.variants.map(v => v.price)
+                                )}`
+                                : `₹${product.price}`)
+                        }
 
                     </span>
 
                     <span className="action">
 
-                        Personalise →
+                        {product.variants?.length > 1
+                            ? "Explore →"
+                            : "Personalise →"
+                        }
 
                     </span>
 

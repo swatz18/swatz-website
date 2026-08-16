@@ -9,10 +9,10 @@ const categories = [
     "All",
     "Magnets",
     "Keychains",
-    "Pin Badges",
+    "Pin Badges"
     // "Acrylic Magnets",
     // "Flexi Magnets",
-    "Combos"
+    // "Combos"
 ];
 
 export default function Shop() {
@@ -102,7 +102,7 @@ export default function Shop() {
                                 <h1>Shop Our Collections</h1>
 
                                 <p>
-                                    Crafted to preserve your favourite moments.
+                                    Discover keepsakes made for your special moments.
                                 </p>
 
                             </div>

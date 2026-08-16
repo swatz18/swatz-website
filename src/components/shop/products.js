@@ -1,13 +1,20 @@
 // import babyMagnet from "../../assets/images/products/baby-magnet.jpg";
 
-import M2 from "../../assets/images/products/M2.png";
-import M3 from "../../assets/images/products/M3.png";
-import M4 from "../../assets/images/products/M4.png";
-import familyKeychain from "../../assets/images/products/family-keychain.jpg";
-import weddingBadge from "../../assets/images/products/wedding-badge.jpg";
+import M1 from "../../assets/images/products/FM 58mm 1.jpg";
+import M3 from "../../assets/images/products/FM 58mm 3.jpg";
+import M4 from "../../assets/images/products/FM 58mm 4.jpg";
+import M5 from "../../assets/images/products/FM 58mm 5.jpg";
+import PB1 from "../../assets/images/products/PB 44mm 1.jpg";
+import PB3 from "../../assets/images/products/PB 44mm 3.jpg";
+import PB4 from "../../assets/images/products/PB 44mm 4.jpg";
+import FPB1 from "../../assets/images/products/PB 58mm 1.jpg";
+import FPB2 from "../../assets/images/products/PB 58mm 2.jpg";
+import K1 from "../../assets/images/products/KC 44mm 1.jpg";
+import K3 from "../../assets/images/products/KC 44mm 3.jpg";
+import K4 from "../../assets/images/products/KC 44mm 4.jpg";
 import acrylicMagnet from "../../assets/images/products/acrylic-magnet.jpg";
 import flexibleMagnet from "../../assets/images/products/flexible-magnet.jpg";
-import combo from "../../assets/images/products/baby-magnet.jpg";
+
 
 export const products = [
 
@@ -43,12 +50,13 @@ export const products = [
 
     badge: "MOST LOVED",
 
-    image: M2,
+    image: M1,
 
     images: [
-    M2,
+    M1,
     M3,
     M4,
+    M5
 ],
 
     features: [
@@ -78,12 +86,25 @@ export const products = [
 
     variants: [
         {
-            label: "Standard",
-            price: 149
+            label: "Without Stand - 6 * 9 cm",
+            price: 120,
+            images: [
+                acrylicMagnet,
+                acrylicMagnet,
+                acrylicMagnet
+            ]
+        },
+        {
+            label: "With Stand - 6.5 * 10 cm",
+            price: 150,
+            images: [
+                acrylicMagnet,
+                acrylicMagnet,
+                acrylicMagnet
+            ]
         }
     ],
-
-    price: 149,
+    price:120,
 
     badge: "PREMIUM",
 
@@ -114,7 +135,7 @@ export const products = [
 
     variants: [
         {
-            label: "Standard",
+            label: "5 * 13 cm",
             price: 149
         }
     ],
@@ -148,16 +169,18 @@ export const products = [
         "Minimal square magnets for everyday memories.",
 
     description:
-        "Printed on premium flexible magnetic sheets, these lightweight magnets beautifully display your favourite moments.",
+        "Customize an entire magnet sheet for just ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
 
     variants: [
         {
-            label: "3.5 × 3.5",
-            price: 79
+            label: "6 * 6 cm",
+            quantity: "12",
+            price: 499
         }
     ],
 
-    price: 79,
+    price: 499,
+    priceLabel: "₹499/Sheet",
 
     badge: "",
 
@@ -184,7 +207,7 @@ export const products = [
         "Classic Polaroid-style magnets in multiple sizes.",
 
     description:
-        "Relive your favourite memories with our Polaroid-inspired magnets, available in multiple sizes to suit every occasion.",
+        "Customize an entire magnet sheet for just ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
 
     variants: [
         {
@@ -205,6 +228,7 @@ export const products = [
     ],
 
     price: 99,
+    priceLabel: "₹499/Sheet",
 
     badge: "POPULAR",
 
@@ -231,22 +255,23 @@ export const products = [
         "Tiny personalised magnets with a big emotional touch.",
 
     description:
-        "Cute, compact and perfect for memory walls, gifting and decorating small spaces with your favourite photos.",
+        "Customize an entire magnet sheet for ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
 
     variants: [
         {
-            label: "4 × 4",
+            label: "4 × 4 cm",
             quantity: "12",
-            price: 399
+            price: 499
         },
         {
-            label: "4 × 5",
+            label: "4 × 5 cm",
             quantity: "10",
-            price: 399
+            price: 499
         }
     ],
 
     price: 89,
+    priceLabel: "₹499/Sheet",
 
     badge: "",
 
@@ -279,19 +304,21 @@ export const products = [
         variants: [
             {
                 label: "44 mm",
-                price: 99
+                price: 99,
+                images: [
+                    K1,
+                    K3,
+                    K4
+                ]
             },
-            {
-                label: "58 mm",
-                price: 129
-            }
+            
         ],
 
-        price: 99,
+        price: 49,
 
         badge: "",
 
-        image: familyKeychain,
+        image: K1,
 
         features: [
             "Premium Print Quality",
@@ -318,19 +345,32 @@ export const products = [
         variants: [
             {
                 label: "44 mm",
-                price: 35
+                price: 25,
+
+                images: [
+                    PB1,
+                    PB3,
+                    PB4
+                ]
             },
+
             {
                 label: "58 mm",
-                price: 50
+                price: 35,
+
+                images: [
+                    FPB1,
+                    FPB2
+                    
+                ]
             }
         ],
 
-        price: 35,
+        price: 25,
 
         badge: "",
 
-        image: weddingBadge,
+        image: PB1,
 
         features: [
             "44 mm & 58 mm Available",

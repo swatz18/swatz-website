@@ -20,7 +20,7 @@ export default function BestSellers() {
                 <h2>Bestsellers</h2>
 
                 <p>
-                    Our most-loved personalised keepsakes, crafted for every occasion.
+                    Our best-loved keepsakes, made for moments that matter.
                 </p>
 
             </div>

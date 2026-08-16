@@ -28,6 +28,10 @@ export default function ProductDetails() {
 
     const [selectedImages, setSelectedImages] = useState([]);
     const [activeImage, setActiveImage] = useState(0);
+    const currentImages =
+    selectedVariant?.images?.length > 0
+        ? selectedVariant.images
+        : product.images || [product.image];
 
     const [orderNotes, setOrderNotes] = useState("");
     
@@ -43,8 +47,10 @@ export default function ProductDetails() {
             type: product.type,
             variant: selectedVariant?.label ?? "",
             variantQuantity: selectedVariant?.quantity ?? "",
-            image: product.image,
+            variants:product.variants,
+            image: currentImages[0] || product.image,
             price: selectedVariant?.price ?? product.price,
+            priceLabel:product.priceLabel,
             quantity,
             photos: selectedImages,
             notes: orderNotes
@@ -96,14 +102,11 @@ export default function ProductDetails() {
                     <div className="product-main-image">
 
                         <img
-                            src={
-                                product.images?.[activeImage] ||
-                                product.image
-                            }
+                            src={currentImages[activeImage] || product.image}
                             alt={product.title}
                         />
 
-                        {product.images && product.images.length > 1 && (
+                        {currentImages.length > 1 && (
 
                             <>
                                 <button
@@ -112,7 +115,7 @@ export default function ProductDetails() {
                                     onClick={() =>
                                         setActiveImage(
                                             activeImage === 0
-                                                ? product.images.length - 1
+                                                ? currentImages.length - 1
                                                 : activeImage - 1
                                         )
                                     }
@@ -126,7 +129,7 @@ export default function ProductDetails() {
                                     className="image-arrow image-arrow-right"
                                     onClick={() =>
                                         setActiveImage(
-                                            activeImage === product.images.length - 1
+                                            activeImage === currentImages.length - 1
                                                 ? 0
                                                 : activeImage + 1
                                         )
@@ -141,11 +144,11 @@ export default function ProductDetails() {
 
                     </div>
 
-                    {product.images && product.images.length > 1 && (
+                    {currentImages.length > 1 && (
 
                         <div className="image-dots">
 
-                            {product.images.map((_, index) => (
+                            {currentImages.map((_, index) => (
 
                                 <button
                                     key={index}
@@ -217,7 +220,10 @@ export default function ProductDetails() {
                                             selectedVariant === variant ? "active" : ""
                                         }`}
 
-                                        onClick={() => setSelectedVariant(variant)}
+                                        onClick={() => {
+                                            setSelectedVariant(variant);
+                                            setActiveImage(0);
+                                        }}
 
                                     >
 

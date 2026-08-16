@@ -1,5 +1,6 @@
 import "./Help.css";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/footer/Footer";
 
@@ -7,7 +8,7 @@ const faqs = [
     {
         question: "How do I place an order?",
         answer:
-            "Choose your product, select the required options, personalise it and add it to your cart. Complete checkout to place your order."
+            "Choose your product, select the required options, personalise it and add it to your cart. Complete checkout via whatsapp to place your order."
     },
     {
         question: "Can I customise my product?",
@@ -42,6 +43,25 @@ const faqs = [
 ];
 
 export default function Help() {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!location.hash) return;
+
+        const id = location.hash.substring(1);
+
+        setTimeout(() => {
+            const element = document.getElementById(id);
+
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        }, 100);
+    }, [location.hash]);
 
     const [openFaq, setOpenFaq] = useState(null);
     useEffect(() => {
