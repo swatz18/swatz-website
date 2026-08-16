@@ -19,8 +19,9 @@ export default async function handler(req, res) {
 
     // CORS
     const allowedOrigins = [
-        "https://swatz18.github.io",
-        "http://localhost:3000"
+    "https://swatz-website.vercel.app",
+    "https://swatz18.github.io",
+    "http://localhost:3000"
     ];
 
     const origin = req.headers.origin;
@@ -150,7 +151,14 @@ export default async function handler(req, res) {
 
         catch (error) {
 
-            console.error("Order failed:", error);
+            console.error("=================================");
+            console.error("❌ ORDER FAILED");
+            console.error("Error:", error);
+            console.error("Message:", error?.message);
+            console.error("Stack:", error?.stack);
+            console.error("=================================");
+
+    
 
             if (driveFolder) {
 

@@ -1,12 +1,14 @@
 import "./FeaturedCollections.css";
 import FeaturedCard from "./FeaturedCard";
-
-// Temporary Images
-import M1 from "../../assets/images/products/FM 58mm 1.jpg";
-import K1 from "../../assets/images/products/KC 44mm 1.jpg";
-import PB3 from "../../assets/images/products/PB 44mm 3.jpg";
+import { products } from "../shop/products";
 
 export default function FeaturedCollections() {
+
+    const featuredProducts = [
+        products.find(product => product.category === "Magnets"),
+        products.find(product => product.category === "Keychains"),
+        products.find(product => product.category === "Pin Badges")
+    ];
 
     return (
 
@@ -26,26 +28,21 @@ export default function FeaturedCollections() {
 
                 <div className="featured-grid">
 
-                    <FeaturedCard
-                        image={M1}
-                        title="Fridge Magnets"
-                        category="Magnets"
-                        description="Personalised magnets that celebrates every memory."
-                    />
+                    {featuredProducts.map(product => (
 
-                    <FeaturedCard
-                        image={K1}
-                        title="Keychains"
-                        category="Keychains"
-                        description="Carry your favourite moments wherever you go."
-                    />
+                        <FeaturedCard
+                            key={product.id}
+                            image={product.image}
+                            title={
+                                product.category === "Magnets"
+                                    ? "Fridge Magnets"
+                                    : product.category
+                            }
+                            category={product.category}
+                            description={product.shortDescription}
+                        />
 
-                    <FeaturedCard
-                        image={PB3}
-                        title="Pin Badges"
-                        category="Pin Badges"
-                        description="Turn your favourite moments into wearable keepsakes."
-                    />
+                    ))}
 
                 </div>
 

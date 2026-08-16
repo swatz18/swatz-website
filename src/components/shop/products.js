@@ -1,290 +1,365 @@
-// import babyMagnet from "../../assets/images/products/baby-magnet.jpg";
+import { getProductImages } from "./productImages";
 
-import M1 from "../../assets/images/products/FM 58mm 1.jpg";
-import M3 from "../../assets/images/products/FM 58mm 3.jpg";
-import M4 from "../../assets/images/products/FM 58mm 4.jpg";
-import M5 from "../../assets/images/products/FM 58mm 5.jpg";
-import PB1 from "../../assets/images/products/PB 44mm 1.jpg";
-import PB3 from "../../assets/images/products/PB 44mm 3.jpg";
-import PB4 from "../../assets/images/products/PB 44mm 4.jpg";
-import FPB1 from "../../assets/images/products/PB 58mm 1.jpg";
-import FPB2 from "../../assets/images/products/PB 58mm 2.jpg";
-import K1 from "../../assets/images/products/KC 44mm 1.jpg";
-import K3 from "../../assets/images/products/KC 44mm 3.jpg";
-import K4 from "../../assets/images/products/KC 44mm 4.jpg";
-import acrylicMagnet from "../../assets/images/products/acrylic-magnet.jpg";
-import flexibleMagnet from "../../assets/images/products/flexible-magnet.jpg";
 
+/* =====================================================
+   PRODUCT IMAGES
+===================================================== */
+
+// ---------- MAGNETS ----------
+
+const roundMagnetImages =
+    getProductImages("Round Magnets");
+
+const acrylicWithStandImages =
+    getProductImages("Rectangle Acrylic magnet with stand");
+
+const acrylicWithoutStandImages =
+    getProductImages("Rectangle Acrylic magnet without stand");
+
+const acrylicStripMagnetImages =
+    getProductImages("Acrylic Strip Magnet");
+
+const squarePhotoMagnetImages =
+    getProductImages("Square photo Magnet");
+
+const miniPhoto4x4Images =
+    getProductImages("Mini Photo Magnet 4X4");
+
+const miniPhoto4x5Images =
+    getProductImages("Mini Photo Magnet 4X5");
+
+const polaroidSmallImages =
+    getProductImages("Polaroid Small");
+
+const polaroidMediumImages =
+    getProductImages("Polaroid Medium");
+
+const polaroidLargeImages =
+    getProductImages("Polaroid Large");
+
+
+// ---------- KEYCHAINS ----------
+
+const keychainImages =
+    getProductImages("Keychains");
+
+
+// ---------- PIN BADGES ----------
+
+const pinBadge44Images =
+    getProductImages("Pin Badges 44mm");
+
+const pinBadge58Images =
+    getProductImages("Pin Badges 58mm");
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
 
 export const products = [
 
-    // ========================================
-// 🧲 MAGNETS
-// ========================================
+    // =================================================
+    // 🧲 MAGNETS
+    // =================================================
 
-// ---------- CLASSIC MAGNETS ----------
 
-{
-    id: 1,
+    // ---------- CLASSIC MAGNET ----------
 
-    category: "Magnets",
+    {
+        id: 1,
 
-    type: "Classic Magnets",
+        category: "Magnets",
 
-    title: "Classic Round Magnet",
+        type: "Classic Magnets",
 
-    shortDescription:
-        "Our signature personalised magnet for every memory.",
+        title: "Classic Round Magnet",
 
-    description:
-        "Transform your favourite photos into timeless keepsakes with our Classic Round Magnet. Perfect for birthdays, weddings, anniversaries, baby milestones, logos, pets and every special moment.",
+        shortDescription:
+            "Our signature personalised magnet for every memory.",
 
-    variants: [
-        {
-            label: "58 mm",
-            price: 99
-        }
-    ],
+        description:
+            "Transform your favourite photos into timeless keepsakes with our Classic Round Magnet. Perfect for birthdays, weddings, anniversaries, baby milestones, logos, pets and every special moment.",
 
-    price: 99,
+        variants: [
+            {
+                label: "58 mm",
+                price: 99,
+                images: roundMagnetImages
+            }
+        ],
 
-    badge: "MOST LOVED",
+        price: 99,
 
-    image: M1,
+        badge: "MOST LOVED",
 
-    images: [
-    M1,
-    M3,
-    M4,
-    M5
-],
+        images: roundMagnetImages,
 
-    features: [
-        "58 mm Round Magnet",
-        "Premium Print Quality",
-        "Strong Magnet",
-        "Fully Personalised"
-    ]
-},
+        image: roundMagnetImages[0],
 
-// ---------- PREMIUM ACRYLIC ----------
+        features: [
+            "58 mm Round Magnet",
+            "Premium Print Quality",
+            "Strong Magnet",
+            "Fully Personalised"
+        ]
+    },
 
-{
-    id: 2,
 
-    category: "Magnets",
+    // ---------- PREMIUM ACRYLIC ----------
 
-    type: "Premium Acrylic",
+    {
+        id: 2,
 
-    title: "Rectangle Acrylic Magnet",
+        category: "Magnets",
 
-    shortDescription:
-        "Crystal-clear acrylic keepsakes with a premium finish.",
+        type: "Premium Acrylic",
 
-    description:
-        "A premium acrylic magnet designed to showcase your favourite memories with exceptional clarity and elegance.",
+        title: "Rectangle Acrylic Magnet",
 
-    variants: [
-        {
-            label: "Without Stand - 6 * 9 cm",
-            price: 120,
-            images: [
-                acrylicMagnet,
-                acrylicMagnet,
-                acrylicMagnet
-            ]
-        },
-        {
-            label: "With Stand - 6.5 * 10 cm",
-            price: 150,
-            images: [
-                acrylicMagnet,
-                acrylicMagnet,
-                acrylicMagnet
-            ]
-        }
-    ],
-    price:120,
+        shortDescription:
+            "Crystal-clear acrylic keepsakes with a premium finish.",
 
-    badge: "PREMIUM",
+        description:
+            "A premium acrylic magnet designed to showcase your favourite memories with exceptional clarity and elegance.",
 
-    image: acrylicMagnet,
+        variants: [
+            {
+                label: "Without Stand - 6 × 9 cm",
+                price: 120,
+                images: acrylicWithoutStandImages
+            },
 
-    features: [
-        "Premium Acrylic",
-        "Crystal Clear Finish",
-        "Scratch Resistant",
-        "Fully Personalised"
-    ]
-},
+            {
+                label: "With Stand - 6.5 × 10 cm",
+                price: 150,
+                images: acrylicWithStandImages
+            }
+        ],
 
-{
-    id: 3,
+        price: 120,
 
-    category: "Magnets",
+        badge: "PREMIUM",
 
-    type: "Premium Acrylic",
+        images: acrylicWithoutStandImages,
 
-    title: "Acrylic Strip Magnet",
+        image: acrylicWithoutStandImages[0],
 
-    shortDescription:
-        "A sleek panoramic magnet for unforgettable moments.",
+        features: [
+            "Premium Acrylic",
+            "Crystal Clear Finish",
+            "Scratch Resistant",
+            "Fully Personalised"
+        ]
+    },
 
-    description:
-        "Perfect for couple photos, travel memories and family portraits in an elegant panoramic acrylic format.",
 
-    variants: [
-        {
-            label: "5 * 13 cm",
-            price: 149
-        }
-    ],
+    // ---------- ACRYLIC STRIP MAGNET ----------
 
-    price: 149,
+    {
+        id: 3,
 
-    badge: "",
+        category: "Magnets",
 
-    image: acrylicMagnet,
+        type: "Premium Acrylic",
 
-    features: [
-        "Slim Strip Design",
-        "Premium Acrylic",
-        "Modern Finish",
-        "Fully Personalised"
-    ]
-},
+        title: "Acrylic Strip Magnet",
 
-// ---------- FLEXIBLE MAGNETS ----------
+        shortDescription:
+            "A sleek panoramic magnet for unforgettable moments.",
 
-{
-    id: 4,
+        description:
+            "Perfect for couple photos, travel memories and family portraits in an elegant panoramic acrylic format.",
 
-    category: "Magnets",
+        variants: [
+            {
+                label: "5 × 13 cm",
+                price: 149,
+                images: acrylicStripMagnetImages
+            }
+        ],
 
-    type: "Flexible Magnets",
+        price: 149,
 
-    title: "Square Photo Magnet",
+        badge: "Retro",
 
-    shortDescription:
-        "Minimal square magnets for everyday memories.",
+        images: acrylicStripMagnetImages,
 
-    description:
-        "Customize an entire magnet sheet for just ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
+        image: acrylicStripMagnetImages[0],
 
-    variants: [
-        {
-            label: "6 * 6 cm",
-            quantity: "12",
-            price: 499
-        }
-    ],
+        features: [
+            "Slim Strip Design",
+            "Premium Acrylic",
+            "Modern Finish",
+            "Fully Personalised"
+        ]
+    },
 
-    price: 499,
-    priceLabel: "₹499/Sheet",
 
-    badge: "",
+    // =================================================
+    // 🧲 FLEXIBLE MAGNETS
+    // =================================================
 
-    image: flexibleMagnet,
 
-    features: [
-        "Flexible Magnet Sheet",
-        "Premium Print",
-        "Lightweight",
-        "Fully Personalised"
-    ]
-},
+    // ---------- SQUARE PHOTO MAGNET ----------
 
-{
-    id: 5,
+    {
+        id: 4,
 
-    category: "Magnets",
+        category: "Magnets",
 
-    type: "Flexible Magnets",
+        type: "Flexible Magnets",
 
-    title: "Polaroid Photo Magnet",
+        title: "Square Photo Magnet",
 
-    shortDescription:
-        "Classic Polaroid-style magnets in multiple sizes.",
+        shortDescription:
+            "Minimal square magnets for everyday memories.",
 
-    description:
-        "Customize an entire magnet sheet for just ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
+        description:
+            "Customize an entire magnet sheet for just ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
 
-    variants: [
-        {
-            label: "Small",
-            quantity: "15",
-            price: 499
-        },
-        {
-            label: "Medium",
-            quantity: "10",
-            price: 499
-        },
-        {
-            label: "Large",
-            quantity: "6",
-            price: 499
-        }
-    ],
+        variants: [
+            {
+                label: "6 × 6 cm",
+                quantity: 12,
+                price: 499,
+                images: squarePhotoMagnetImages
+            }
+        ],
 
-    price: 99,
-    priceLabel: "₹499/Sheet",
+        price: 499,
 
-    badge: "POPULAR",
+        priceLabel: "₹499 / Sheet",
 
-    image: flexibleMagnet,
+        badge: "",
 
-    features: [
-        "Multiple Sizes",
-        "Premium Flexible Sheet",
-        "Polaroid Layout",
-        "Fully Personalised"
-    ]
-},
+        images: squarePhotoMagnetImages,
 
-{
-    id: 6,
+        image: squarePhotoMagnetImages[0],
 
-    category: "Magnets",
+        features: [
+            "Flexible Magnet Sheet",
+            "Premium Print",
+            "Lightweight",
+            "Fully Personalised"
+        ]
+    },
 
-    type: "Flexible Magnets",
 
-    title: "Mini Photo Magnet",
+    // ---------- POLAROID PHOTO MAGNET ----------
 
-    shortDescription:
-        "Tiny personalised magnets with a big emotional touch.",
+    {
+        id: 5,
 
-    description:
-        "Customize an entire magnet sheet for ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
+        category: "Magnets",
 
-    variants: [
-        {
-            label: "4 × 4 cm",
-            quantity: "12",
-            price: 499
-        },
-        {
-            label: "4 × 5 cm",
-            quantity: "10",
-            price: 499
-        }
-    ],
+        type: "Flexible Magnets",
 
-    price: 89,
-    priceLabel: "₹499/Sheet",
+        title: "Polaroid Photo Magnet",
 
-    badge: "",
+        shortDescription:
+            "Classic Polaroid-style magnets in multiple sizes.",
 
-    image: flexibleMagnet,
+        description:
+            "Customize an entire magnet sheet for just ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
 
-    features: [
-        "Compact Size",
-        "Premium Print",
-        "Flexible Magnet",
-        "Fully Personalised"
-    ]
-},
+        variants: [
+            {
+                label: "Small",
+                quantity: 15,
+                price: 499,
+                images: polaroidSmallImages
+            },
 
+            {
+                label: "Medium",
+                quantity: 10,
+                price: 499,
+                images: polaroidMediumImages
+            },
+
+            {
+                label: "Large",
+                quantity: 6,
+                price: 499,
+                images: polaroidLargeImages
+            }
+        ],
+
+        price: 499,
+
+        priceLabel: "₹499 / Sheet",
+
+        badge: "POPULAR",
+
+        images: polaroidSmallImages,
+
+        image: polaroidSmallImages[0],
+
+        features: [
+            "Multiple Sizes",
+            "Premium Flexible Sheet",
+            "Polaroid Layout",
+            "Fully Personalised"
+        ]
+    },
+
+
+    // ---------- MINI PHOTO MAGNET ----------
+
+    {
+        id: 6,
+
+        category: "Magnets",
+
+        type: "Flexible Magnets",
+
+        title: "Mini Photo Magnet",
+
+        shortDescription:
+            "Tiny personalised magnets with a big emotional touch.",
+
+        description:
+            "Customize an entire magnet sheet for ₹499. Choose your preferred magnet size and get the maximum number of magnets that fit on the sheet.",
+
+        variants: [
+            {
+                label: "4 × 4 cm",
+                quantity: 12,
+                price: 499,
+                images: miniPhoto4x4Images
+            },
+
+            {
+                label: "4 × 5 cm",
+                quantity: 10,
+                price: 499,
+                images: miniPhoto4x5Images
+            }
+        ],
+
+        price: 499,
+
+        priceLabel: "₹499 / Sheet",
+
+        badge: "",
+
+        images: miniPhoto4x4Images,
+
+        image: miniPhoto4x4Images[0],
+
+        features: [
+            "Compact Size",
+            "Premium Print",
+            "Flexible Magnet",
+            "Fully Personalised"
+        ]
+    },
+
+
+    // =================================================
+    // 🔑 KEYCHAINS
+    // =================================================
 
     {
         id: 7,
@@ -305,28 +380,31 @@ export const products = [
             {
                 label: "44 mm",
                 price: 99,
-                images: [
-                    K1,
-                    K3,
-                    K4
-                ]
-            },
-            
+                images: keychainImages
+            }
         ],
 
         price: 49,
 
         badge: "",
 
-        image: K1,
+        images: keychainImages,
+
+        image: keychainImages[0],
 
         features: [
             "Premium Print Quality",
-            "44 mm & 58 mm Available",
+            "44 mm Round Keychain",
             "Strong Metal Ring",
             "Fully Personalised"
         ]
     },
+
+
+    // =================================================
+    // 📌 PIN BADGES
+    // =================================================
+
     {
         id: 8,
 
@@ -346,23 +424,13 @@ export const products = [
             {
                 label: "44 mm",
                 price: 25,
-
-                images: [
-                    PB1,
-                    PB3,
-                    PB4
-                ]
+                images: pinBadge44Images
             },
 
             {
                 label: "58 mm",
                 price: 35,
-
-                images: [
-                    FPB1,
-                    FPB2
-                    
-                ]
+                images: pinBadge58Images
             }
         ],
 
@@ -370,7 +438,9 @@ export const products = [
 
         badge: "",
 
-        image: PB1,
+        images: pinBadge44Images,
+
+        image: pinBadge44Images[0],
 
         features: [
             "44 mm & 58 mm Available",
@@ -378,6 +448,6 @@ export const products = [
             "Sharp Print Quality",
             "Fully Personalised"
         ]
-    },
+    }
 
 ];
