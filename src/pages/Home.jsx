@@ -1,5 +1,5 @@
 import LandingHero from "../components/landing/LandingHero";
-import RibbonReveal from "../components/ribbon/RibbonReveal";
+// import RibbonReveal from "../components/ribbon/RibbonReveal";
 import FeaturedCollections from "../components/featured/FeaturedCollections";
 import BestSellers from "../components/bestsellers/BestSellers";
 import HowItWorks from "../components/howItWorks/HowItWorks";
@@ -12,7 +12,7 @@ export default function Home() {
 
         <>
             <LandingHero />
-            <RibbonReveal />
+            {/* <RibbonReveal /> */}
             <FeaturedCollections />
             <BestSellers />
             <HowItWorks />

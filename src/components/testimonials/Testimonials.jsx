@@ -20,19 +20,19 @@ const testimonials = [
     },
 
     {
-        image: `${import.meta.env.BASE_URL}images/testimonials/customer3.jpg`,
-        name: "Tharani",
-        place: "Ooty",
+        image: `${import.meta.env.BASE_URL}images/testimonials/customer3.jpeg`,
+        name: "Hemathi",
+        place: "Gobichettiplayam",
         review:
-            "Ordered personalised magnets for my parents’ anniversary, and they turned out even more beautiful than I imagined. The packaging, quality and little details made the gift feel so personal — they absolutely loved it!"
+            "Absolutely loved the customised magnets we got for our new shop opening! The designs were top-notch, creative, and exactly what we wanted. The quality was truly unmatchable, with great attention to detail. The entire experience was smooth, and the final product exceeded our expectations. Highly recommended for anyone looking for unique and customised magnets!"
     },
 
     {
        image: `${import.meta.env.BASE_URL}images/testimonials/customer4.jpg`,
         name: "Priya",
-        place: "Hyderabad",
+        place: "Srivillipudhur",
         review:
-            "Got these magnets made for my best friend’s birthday, and honestly, they became the highlight of the gift. The photos were perfectly printed, the quality was amazing, and it felt like gifting a bunch of our memories together"
+            "My mom and dad were so happy to see their memories on these beautiful fridge magnets! ❤️ Such a lovely and meaningful keepsake. Thank you for making something so special!"
     },
 
 

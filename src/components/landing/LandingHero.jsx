@@ -31,9 +31,9 @@ function LandingHero() {
           <div className="hero-divider"></div>
 
           <p className="hero-subtitle">
-            Tiny magnets.
+            Tiny Gifts.
             <br />
-            Lifelong memories.
+            Lifelong Memories.
           </p>
 
           <Link
