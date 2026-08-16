@@ -5,43 +5,36 @@ const testimonials = [
 
     {
         image: `${import.meta.env.BASE_URL}images/testimonials/customer1.jpg`,
-        name: "Priya S.",
+        name: "Suriya Veera",
         place: "Coimbatore",
         review:
-            "Absolutely loved the quality. The magnets came out even better than I imagined and made the perfect gift."
+            "Found Swatz Magnets through the personalised keychains my wife gifted me, so they were my first choice for my friends of 8+ years.Last-minute order, delivered in a day, beautifully aligned photos, freebies and a surprise discount — the emotional reaction made it truly unforgettable!"
     },
 
     {
-        image: `${import.meta.env.BASE_URL}images/testimonials/customer2.jpg`,
-        name: "Rahul K.",
-        place: "Chennai",
+        image: `${import.meta.env.BASE_URL}images/testimonials/customer2.jpeg`,
+        name: "Raji",
+        place: "Coimbatore",
         review:
-            "Beautiful craftsmanship and excellent packaging. My family couldn't stop smiling."
+            "Absolutely loved these custom photo magnets!The pictures came out really well, and the magnets are so cute and nicely made. The customization was exactly what I wanted, and the quality is really good. Such a lovely way to turn our favourite memories into something we can see every day. Very happy with my purchase and would definitely recommend!"
     },
 
     {
         image: `${import.meta.env.BASE_URL}images/testimonials/customer3.jpg`,
-        name: "Nisha R.",
-        place: "Bangalore",
+        name: "Tharani",
+        place: "Ooty",
         review:
-            "The colours were vibrant and the print quality was outstanding. Highly recommended!"
+            "Ordered personalised magnets for my parents’ anniversary, and they turned out even more beautiful than I imagined. The packaging, quality and little details made the gift feel so personal — they absolutely loved it!"
     },
 
     {
        image: `${import.meta.env.BASE_URL}images/testimonials/customer4.jpg`,
-        name: "Arjun M.",
+        name: "Priya",
         place: "Hyderabad",
         review:
-            "Ordered it as an anniversary gift. It became the favourite thing on our refrigerator."
+            "Got these magnets made for my best friend’s birthday, and honestly, they became the highlight of the gift. The photos were perfectly printed, the quality was amazing, and it felt like gifting a bunch of our memories together"
     },
 
-    {
-       image: `${import.meta.env.BASE_URL}images/testimonials/customer5.jpg`,
-        name: "Deepa V.",
-        place: "Madurai",
-        review:
-            "From ordering to delivery, everything was smooth. It felt truly personalised."
-    }
 
 ];
 
