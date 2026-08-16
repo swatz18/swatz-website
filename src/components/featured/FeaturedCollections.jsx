@@ -1,6 +1,6 @@
 import "./FeaturedCollections.css";
 import FeaturedCard from "./FeaturedCard";
-import { products } from "../shop/products";
+import { products } from "../shop/products.js";
 
 export default function FeaturedCollections() {
 

@@ -29,3 +29,4 @@ dist-ssr
 # Google OAuth Credentials
 credentials/
 .env.local
+generateGoogleToken.js
