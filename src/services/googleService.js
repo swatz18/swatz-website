@@ -45,7 +45,7 @@ export async function saveOrder(order) {
         });
 
         const response = await fetch(
-            "https://swatz-website.vercel.app/api/orders",
+            "/api/orders",
             {
                 method: "POST",
                 body: formData

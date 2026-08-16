@@ -19,6 +19,8 @@ export default async function handler(req, res) {
 
     // CORS
     const allowedOrigins = [
+    "https://swatz.in",
+    "https://www.swatz.in",
     "https://swatz-website.vercel.app",
     "https://swatz18.github.io",
     "http://localhost:3000"
