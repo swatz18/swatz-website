@@ -88,13 +88,15 @@ export default function Cart() {
 
         );
 
-        const phone = "917502131997";
+        const phone = "919489771802";
 
         const whatsappAppUrl =
             `whatsapp://send?phone=${phone}&text=${message}`;
 
         const whatsappWebUrl =
             `https://wa.me/${phone}?text=${message}`;
+        console.log("WHATSAPP PHONE:", phone);
+        console.log("WHATSAPP URL:", whatsappWebUrl);    
 
         const isMobile =
             /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
