@@ -325,14 +325,14 @@ export const products = [
         variants: [
             {
                 label: "4 × 4 cm",
-                quantity: 12,
+                quantity: 24,
                 price: 499,
                 images: miniPhoto4x4Images
             },
 
             {
                 label: "4 × 5 cm",
-                quantity: 10,
+                quantity: 20,
                 price: 499,
                 images: miniPhoto4x5Images
             }
