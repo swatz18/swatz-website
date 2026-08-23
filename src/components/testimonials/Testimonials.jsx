@@ -22,7 +22,7 @@ const testimonials = [
     {
         image: `${import.meta.env.BASE_URL}images/testimonials/customer3.jpeg`,
         name: "Hemathi",
-        place: "Gobichettiplayam",
+        place: "Gobichettipalayam",
         review:
             "Absolutely loved the customised magnets we got for our new shop opening! The designs were top-notch, creative, and exactly what we wanted. The quality was truly unmatchable, with great attention to detail. The entire experience was smooth, and the final product exceeded our expectations. Highly recommended for anyone looking for unique and customised magnets!"
     },
