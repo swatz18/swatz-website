@@ -50,9 +50,10 @@ export default function ProductCard({
                 </span>
 
                 <h3>
-
                     {title}
-
+                    {category === "Return Gifts" && variants?.[0]?.quantity
+                        ? ` (${variants[0].quantity} pcs)`
+                        : ""}
                 </h3>
 
                 <p className="product-short-description">
@@ -75,9 +76,11 @@ export default function ProductCard({
 
                     <span className="product-button">
 
-                        {variants?.length > 1
-                            ? "Choose Sizes →"
-                            : "Create Yours →"
+                        {category === "Return Gifts"
+                            ? "Choose Count →"
+                            : variants?.length > 1
+                                ? "Choose Size →"
+                                : "Create Yours →"
                         }
 
                     </span>

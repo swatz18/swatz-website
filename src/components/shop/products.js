@@ -526,6 +526,8 @@ export const products = [
 
     title: "Classic Round Fridge Magnet",
 
+    size: "58 mm",
+
     shortDescription:
         "A personalised keepsake made specially for your special occasions.",
 
@@ -598,6 +600,8 @@ export const products = [
 
     title: "Bharathiyar Flexi Magnet",
 
+    size: "3.5 × 2.5 inch",
+
     shortDescription:
         "Beautiful Bharathiyar quotes turned into meaningful return gifts.",
 
@@ -665,6 +669,8 @@ export const products = [
     type: "Return Gifts",
 
     title: "Murugar Flexi Magnet",
+
+    size: "4 × 5 cm",
 
     shortDescription:
         "A traditional and meaningful Murugar return gift for every celebration.",

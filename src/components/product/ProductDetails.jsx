@@ -64,6 +64,7 @@ export default function ProductDetails() {
         addItem({
             id: product.id,
             title: product.title,
+            size: product.size,
             category: product.category,
             type: product.type,
             variant: selectedVariant?.label ?? "",
@@ -220,10 +221,12 @@ export default function ProductDetails() {
                     </span>
 
                     <h1>
-
                         {product.title}
-
+                        {product.category === "Return Gifts" && selectedVariant?.quantity
+                            ? ` (${selectedVariant.quantity} pcs)`
+                            : ""}
                     </h1>
+                        
 
                     <div className="product-detail-price-wrap">
 
@@ -247,6 +250,23 @@ export default function ProductDetails() {
                         {product.description}
 
                     </p>
+                    {product.category === "Return Gifts" && product.size && (
+                        <div className="variant-section">
+
+                            <h4>
+                                Available Size
+                            </h4>
+
+                            <div className="variant-pills">
+
+                                <span className="variant-pill active">
+                                    {product.size}
+                                </span>
+
+                            </div>
+
+                        </div>
+                    )}
 
                     {product.variants && product.variants.length > 0 && (
 

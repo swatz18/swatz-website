@@ -22,9 +22,10 @@ export default function CartItem({item,index}) {
                 </span>
 
                 <h3>
-
                     {item.title}
-
+                    {item.category === "Return Gifts" && item.variantQuantity
+                        ? ` (${item.variantQuantity} pcs)`
+                        : ""}
                 </h3>
 
                 <p className="cart-item-price">
@@ -35,29 +36,40 @@ export default function CartItem({item,index}) {
 
                 <div className="cart-item-meta">
 
-                    {item.variant && (
+                    {item.category === "Return Gifts" ? (
 
-                        <span>
+                        item.size && (
 
-                             Size: {item.variant}
+                            <span>
+                                Size: {item.size}
+                            </span>
 
-                        </span>
+                        )
+
+                    ) : (
+
+                        item.variant && (
+
+                            <span>
+                                Size: {item.variant}
+                            </span>
+
+                        )
 
                     )}
 
-                    {item.variantQuantity && (
+                    {item.category === "Return Gifts" && item.variantQuantity && (
 
                         <span>
-
-                             Count: {item.variantQuantity}  Magnets
-
+                            Count: {item.variantQuantity} Magnets
                         </span>
 
                     )}
 
                     <span>
 
-                        📷 {item.photos.length} {item.photos.length === 1 ? "Photo" : "Photos"} Added
+                        📷 {item.photos.length}{" "}
+                        {item.photos.length === 1 ? "Photo" : "Photos"} Added
 
                     </span>
 

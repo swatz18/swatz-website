@@ -48,7 +48,7 @@ export default function Cart() {
 
                 const details = [
                     `• ${item.title}`,
-                    item.variant && `   Size    : ${item.variant}`,
+                    item.size && `   Size    : ${item.size}`,
                     item.variantQuantity && `   Count   : ${item.variantQuantity}`,
                     `   Qty     : ${item.quantity}`,
                     `   Amount  : ₹${item.price * item.quantity}`
@@ -64,9 +64,9 @@ export default function Cart() {
         const photoMessage = photoUploadFailed
             ? `
 
-    ⚠️ My photos couldn't be uploaded automatically.
+            ⚠️ My photos couldn't be uploaded automatically.
 
-    I'll send them in this chat.`
+            I'll send them in this chat.`
             : "";
 
         const message = encodeURIComponent(
