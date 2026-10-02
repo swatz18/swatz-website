@@ -1,4 +1,7 @@
-import { getProductImages } from "./productImages";
+import {
+    getProductImages,
+    getProductVideo
+} from "./productImages";
 
 
 /* =====================================================
@@ -51,6 +54,16 @@ const pinBadge44Images =
 
 const pinBadge58Images =
     getProductImages("Pin Badges 58mm");
+
+// ---------- RETURN GIFTS ----------
+const roundMagnetVideo =
+    getProductVideo("Round Magnets");
+
+const bharathiyarFlexiMagnetImages =
+    getProductImages("Bharathiyar Flexi Magnet");
+
+const murugarFlexiMagnetImages =
+    getProductImages("Murugar Flexi Magnet");    
 
 
 /* =====================================================
@@ -106,58 +119,100 @@ export const products = [
     },
 
 
-    // ---------- PREMIUM ACRYLIC ----------
+   // ---------- ACRYLIC MAGNET — WITHOUT STAND ----------
 
-    {
-        id: 2,
+{
+    id: 2,
 
-        category: "Magnets",
+    category: "Magnets",
 
-        type: "Premium Acrylic",
+    type: "Premium Acrylic",
 
-        title: "Rectangle Acrylic Magnet",
+    title: "Rectangle Acrylic Magnet - Without Stand",
 
-        shortDescription:
-            "Crystal-clear acrylic keepsakes with a premium finish.",
+    shortDescription:
+        "Crystal-clear acrylic keepsakes with a premium finish.",
 
-        description:
-            "A premium acrylic magnet designed to showcase your favourite memories with exceptional clarity and elegance.",
+    description:
+        "A premium acrylic magnet designed to showcase your favourite memories with exceptional clarity and elegance.",
 
-        variants: [
-            {
-                label: "Without Stand - 6 × 9 cm",
-                price: 120,
-                images: acrylicWithoutStandImages
-            },
+    variants: [
+        {
+            label: "Single Side",
+            price: 125,
+            images: acrylicWithoutStandImages
+        },
 
-            {
-                label: "With Stand - 6.5 × 10 cm",
-                price: 150,
-                images: acrylicWithStandImages
-            }
-        ],
+        {
+            label: "Double Side",
+            price: 150,
+            images: acrylicWithoutStandImages
+        }
+    ],
 
-        price: 120,
+    price: 125,
 
-        badge: "PREMIUM",
+    badge: "PREMIUM",
 
-        images: acrylicWithoutStandImages,
+    images: acrylicWithoutStandImages,
 
-        image: acrylicWithoutStandImages[0],
+    image: acrylicWithoutStandImages[0],
 
-        features: [
-            "Premium Acrylic",
-            "Crystal Clear Finish",
-            "Scratch Resistant",
-            "Fully Personalised"
-        ]
-    },
+    features: [
+        "Premium Acrylic",
+        "Crystal Clear Finish",
+        "Scratch Resistant",
+        "Fully Personalised"
+    ]
+},
+
+
+// ---------- ACRYLIC MAGNET — WITH STAND ----------
+
+{
+    id: 3,
+
+    category: "Magnets",
+
+    type: "Premium Acrylic",
+
+    title: "Rectangle Acrylic Magnet - With Stand",
+
+    shortDescription:
+        "Crystal-clear acrylic keepsakes with a premium finish.",
+
+    description:
+        "A premium acrylic magnet with a sturdy stand, designed to beautifully display your favourite memories.",
+
+    variants: [
+        {
+            label: "6.5 × 10 cm",
+            price: 150,
+            images: acrylicWithStandImages
+        }
+    ],
+
+    price: 150,
+
+    badge: "PREMIUM",
+
+    images: acrylicWithStandImages,
+
+    image: acrylicWithStandImages[0],
+
+    features: [
+        "Premium Acrylic",
+        "Crystal Clear Finish",
+        "Sturdy Stand",
+        "Fully Personalised"
+    ]
+},
 
 
     // ---------- ACRYLIC STRIP MAGNET ----------
 
     {
-        id: 3,
+        id: 4,
 
         category: "Magnets",
 
@@ -172,14 +227,20 @@ export const products = [
             "Perfect for couple photos, travel memories and family portraits in an elegant panoramic acrylic format.",
 
         variants: [
-            {
-                label: "5 × 13 cm",
-                price: 149,
-                images: acrylicStripMagnetImages
-            }
-        ],
+        {
+            label: "Single Side",
+            price: 175,
+            images: acrylicStripMagnetImages
+        },
 
-        price: 149,
+        {
+            label: "Double Side",
+            price: 199,
+            images: acrylicStripMagnetImages
+        }
+    ],
+
+        price: 175,
 
         badge: "Retro",
 
@@ -204,7 +265,7 @@ export const products = [
     // ---------- SQUARE PHOTO MAGNET ----------
 
     {
-        id: 4,
+        id: 5,
 
         category: "Magnets",
 
@@ -249,7 +310,7 @@ export const products = [
     // ---------- POLAROID PHOTO MAGNET ----------
 
     {
-        id: 5,
+        id: 6,
 
         category: "Magnets",
 
@@ -308,7 +369,7 @@ export const products = [
     // ---------- MINI PHOTO MAGNET ----------
 
     {
-        id: 6,
+        id: 7,
 
         category: "Magnets",
 
@@ -362,7 +423,7 @@ export const products = [
     // =================================================
 
     {
-        id: 7,
+        id: 8,
 
         category: "Keychains",
 
@@ -406,7 +467,7 @@ export const products = [
     // =================================================
 
     {
-        id: 8,
+        id: 9,
 
         category: "Pin Badges",
 
@@ -448,6 +509,217 @@ export const products = [
             "Sharp Print Quality",
             "Fully Personalised"
         ]
-    }
+    },
+    // =================================================
+// 🎁 RETURN GIFTS
+// =================================================
+
+
+// ---------- CLASSIC ROUND FRIDGE MAGNET ----------
+
+{
+    id: 10,
+
+    category: "Return Gifts",
+
+    type: "Return Gifts",
+
+    title: "Classic Round Fridge Magnet",
+
+    shortDescription:
+        "A personalised keepsake made specially for your special occasions.",
+
+    description:
+        "Our classic round fridge magnets make thoughtful and memorable return gifts for weddings, baby showers, birthdays and other special occasions.",
+
+    variants: [
+        {
+            label: "50 pcs",
+            quantity: 50,
+            price: 2450,
+            pricePerPiece: 49,
+            images: [roundMagnetImages[0]]
+            
+        },
+
+        {
+            label: "100 pcs",
+            quantity: 100,
+            price: 4500,
+            pricePerPiece: 45,
+            images: [roundMagnetImages[0]]
+        },
+
+        {
+            label: "200 pcs",
+            quantity: 200,
+            price: 8000,
+            pricePerPiece: 40,
+            images: [roundMagnetImages[0]]
+        
+        },
+
+        {
+            label: "300 pcs",
+            quantity: 300,
+            price: 11400,
+            pricePerPiece: 38,
+            images: [roundMagnetImages[0]]
+        }
+    ],
+
+    price: 2450,
+
+    badge: "RETURN GIFT",
+
+    images:[roundMagnetImages[0]],
+
+    image: roundMagnetImages[0],
+
+    video: roundMagnetVideo,
+
+    features: [
+        "58 mm Round Magnet",
+        "Premium Print Quality",
+        "Strong Magnet",
+        "Fully Personalised"
+    ]
+},
+
+
+// ---------- BHARATHIYAR FLEXI MAGNET ----------
+
+{
+    id: 11,
+
+    category: "Return Gifts",
+
+    type: "Return Gifts",
+
+    title: "Bharathiyar Flexi Magnet",
+
+    shortDescription:
+        "Beautiful Bharathiyar quotes turned into meaningful return gifts.",
+
+    description:
+        "Make your special occasion memorable with our personalised Bharathiyar quote flexi magnets. A thoughtful traditional return gift for weddings, baby showers and celebrations.",
+
+    variants: [
+        {
+            label: "50 pcs",
+            quantity: 50,
+            price: 2600,
+            pricePerPiece: 52,
+            images: bharathiyarFlexiMagnetImages,
+        },
+
+        {
+            label: "100 pcs",
+            quantity: 100,
+            price: 4900,
+            pricePerPiece: 49,
+            images: bharathiyarFlexiMagnetImages,
+        },
+
+        {
+            label: "200 pcs",
+            quantity: 200,
+            price: 9000,
+            pricePerPiece: 45,
+            images: bharathiyarFlexiMagnetImages,
+        },
+
+        {
+            label: "300 pcs",
+            quantity: 300,
+            price: 13500,
+            pricePerPiece: 45,
+            images: bharathiyarFlexiMagnetImages,
+        }
+    ],
+
+    price: 2600,
+
+    badge: "RETURN GIFT",
+
+    images: bharathiyarFlexiMagnetImages,
+
+    image: bharathiyarFlexiMagnetImages[0],
+
+    features: [
+        "3.5 × 2.5 Inch Flexi Magnet",
+        "Bharathiyar Quotes",
+        "Traditional Design",
+        "Fully Personalised"
+    ]
+},
+
+
+// ---------- MURUGAR FLEXI MAGNET ----------
+
+{
+    id: 12,
+
+    category: "Return Gifts",
+
+    type: "Return Gifts",
+
+    title: "Murugar Flexi Magnet",
+
+    shortDescription:
+        "A traditional and meaningful Murugar return gift for every celebration.",
+
+    description:
+        "Our personalised Murugar flexi magnets are a beautiful traditional return gift option for weddings, baby showers, housewarming functions and special celebrations.",
+
+    variants: [
+        {
+            label: "50 pcs",
+            quantity: 50,
+            price: 1497,
+            pricePerPiece: 29.94,
+            images: murugarFlexiMagnetImages,
+        },
+
+        {
+            label: "100 pcs",
+            quantity: 100,
+            price: 2495,
+            pricePerPiece: 24.95,
+            images: murugarFlexiMagnetImages,
+        },
+
+        {
+            label: "200 pcs",
+            quantity: 200,
+            price: 4990,
+            pricePerPiece: 24.95,
+            images: murugarFlexiMagnetImages,
+        },
+
+        {
+            label: "300 pcs",
+            quantity: 300,
+            price: 7485,
+            pricePerPiece: 24.95,
+            images: murugarFlexiMagnetImages,
+        }
+    ],
+
+    price: 1497,
+
+    badge: "RETURN GIFT",
+
+    images: murugarFlexiMagnetImages,
+
+    image: murugarFlexiMagnetImages[0],
+
+    features: [
+        "4 × 5 cm Flexi Magnet",
+        "Traditional Murugar Design",
+        "Premium Print",
+        "Fully Personalised"
+    ]
+},
 
 ];

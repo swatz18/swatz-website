@@ -9,8 +9,8 @@ const categories = [
     "All",
     "Magnets",
     "Keychains",
-    "Pin Badges"
-    // "Acrylic Magnets",
+    "Pin Badges",
+    "Return Gifts"
     // "Flexi Magnets",
     // "Combos"
 ];

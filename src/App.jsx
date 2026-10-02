@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import CartPage from "./pages/Cart";
 import Help from "./pages/Help";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import WhatsAppButton from "./components/layout/WhatsAppButton";
 
 function App() {
 
@@ -51,7 +52,8 @@ function App() {
                         />
 
                     </Routes>
-                </>    
+                <WhatsAppButton />
+             </>
             </BrowserRouter>
             
         </CartProvider>

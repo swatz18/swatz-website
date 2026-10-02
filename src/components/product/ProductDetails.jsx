@@ -29,9 +29,30 @@ export default function ProductDetails() {
     const [selectedImages, setSelectedImages] = useState([]);
     const [activeImage, setActiveImage] = useState(0);
     const currentImages =
-    selectedVariant?.images?.length > 0
-        ? selectedVariant.images
-        : product.images || [product.image];
+        selectedVariant?.images?.length > 0
+            ? selectedVariant.images
+            : product.images?.length > 0
+                ? product.images
+                : [product.image];
+
+    const currentVideo =
+        selectedVariant?.video || product.video;
+
+    const mediaItems = [
+        ...currentImages.map((image) => ({
+            type: "image",
+            src: image
+        })),
+
+        ...(currentVideo
+            ? [
+                {
+                    type: "video",
+                    src: currentVideo
+                }
+            ]
+            : [])
+    ];
 
     const [orderNotes, setOrderNotes] = useState("");
     
@@ -101,12 +122,27 @@ export default function ProductDetails() {
 
                     <div className="product-main-image">
 
-                        <img
-                            src={currentImages[activeImage] || product.image}
-                            alt={product.title}
-                        />
+                        {mediaItems[activeImage]?.type === "video" ? (
 
-                        {currentImages.length > 1 && (
+                            <video
+                                src={mediaItems[activeImage].src}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="product-detail-video"
+                            />
+
+                        ) : (
+
+                            <img
+                                src={mediaItems[activeImage]?.src}
+                                alt={product.title}
+                            />
+
+                        )}
+
+                        {mediaItems.length > 1 && (
 
                             <>
                                 <button
@@ -115,11 +151,11 @@ export default function ProductDetails() {
                                     onClick={() =>
                                         setActiveImage(
                                             activeImage === 0
-                                                ? currentImages.length - 1
+                                                ? mediaItems.length - 1
                                                 : activeImage - 1
                                         )
                                     }
-                                    aria-label="Previous image"
+                                    aria-label="Previous media"
                                 >
                                     ‹
                                 </button>
@@ -129,12 +165,12 @@ export default function ProductDetails() {
                                     className="image-arrow image-arrow-right"
                                     onClick={() =>
                                         setActiveImage(
-                                            activeImage === currentImages.length - 1
+                                            activeImage === mediaItems.length - 1
                                                 ? 0
                                                 : activeImage + 1
                                         )
                                     }
-                                    aria-label="Next image"
+                                    aria-label="Next media"
                                 >
                                     ›
                                 </button>
@@ -144,11 +180,12 @@ export default function ProductDetails() {
 
                     </div>
 
-                    {currentImages.length > 1 && (
+
+                    {mediaItems.length > 1 && (
 
                         <div className="image-dots">
 
-                            {currentImages.map((_, index) => (
+                            {mediaItems.map((item, index) => (
 
                                 <button
                                     key={index}
@@ -157,7 +194,11 @@ export default function ProductDetails() {
                                         activeImage === index ? "active" : ""
                                     }`}
                                     onClick={() => setActiveImage(index)}
-                                    aria-label={`View image ${index + 1}`}
+                                    aria-label={
+                                        item.type === "video"
+                                            ? "View product video"
+                                            : `View image ${index + 1}`
+                                    }
                                 />
 
                             ))}
@@ -184,11 +225,22 @@ export default function ProductDetails() {
 
                     </h1>
 
-                    <p className="product-detail-price">
+                    <div className="product-detail-price-wrap">
 
-                        ₹{selectedVariant?.price ?? product.price}
+                        <p className="product-detail-price">
+                            ₹{selectedVariant?.price ?? product.price}
+                        </p>
 
-                    </p>
+                        {product.category === "Return Gifts" &&
+                            selectedVariant?.pricePerPiece && (
+
+                            <span className="price-per-piece">
+                                ₹{selectedVariant.pricePerPiece}/piece
+                            </span>
+
+                        )}
+
+                    </div>
 
                     <p className="product-detail-description">
 
@@ -201,9 +253,9 @@ export default function ProductDetails() {
                         <div className="variant-section">
 
                             <h4>
-                        
-                                Available Size
-
+                                {product.category === "Return Gifts"
+                                    ? "Quantity"
+                                    : "Available Size"}
                             </h4>
 
                             <div className="variant-pills">
@@ -234,12 +286,11 @@ export default function ProductDetails() {
                                 ))}
 
                             </div>
-                            {selectedVariant?.quantity && (
+                            {product.category === "Return Gifts" &&
+                                selectedVariant?.quantity && (
 
                                 <p className="variant-quantity">
-
-                                    Includes <strong>{selectedVariant.quantity}Magnets</strong>
-
+                                    Includes <strong>{selectedVariant.quantity} magnets</strong>
                                 </p>
 
                             )}
@@ -247,40 +298,40 @@ export default function ProductDetails() {
                         </div>
 
                     )}
-                    <div className="quantity-section">
+                    {product.category !== "Return Gifts" && (
 
-                        <h4>
+                        <div className="quantity-section">
 
-                            Quantity
+                            <h4>
+                                Quantity
+                            </h4>
 
-                        </h4>
+                            <div className="quantity-box">
 
-                        <div className="quantity-box">
+                                <button
+                                    onClick={() =>
+                                        quantity > 1 &&
+                                        setQuantity(quantity - 1)
+                                    }
+                                >
+                                    −
+                                </button>
 
-                            <button
-                                onClick={() =>
-                                    quantity > 1 &&
-                                    setQuantity(quantity - 1)
-                                }
-                            >
-                                −
-                            </button>
+                                <span>
+                                    {quantity}
+                                </span>
 
-                            <span>
+                                <button
+                                    onClick={() => setQuantity(quantity + 1)}
+                                >
+                                    +
+                                </button>
 
-                                {quantity}
-
-                            </span>
-
-                            <button
-                                onClick={() => setQuantity(quantity + 1)}
-                            >
-                                +
-                            </button>
+                            </div>
 
                         </div>
 
-                    </div>
+                    )}
                     <div className="upload-section">
 
                         <h4>
