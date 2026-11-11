@@ -40,6 +40,8 @@ const polaroidMediumImages =
 const polaroidLargeImages =
     getProductImages("Polaroid Large");
 
+const miniMagnetCalendarImages =
+    getProductImages("Mini Magnet Calendar");
 
 // ---------- KEYCHAINS ----------
 
@@ -727,5 +729,36 @@ export const products = [
         "Fully Personalised"
     ]
 },
+
+
+{
+    id: 13,
+    category: "Magnets",
+    type: "Mini Magnet Calendar",
+
+    title: "Mini Magnet Calendar 2027",
+
+    shortDescription:
+        "A little calendar to keep your days organised and your favourite moments close.",
+
+    description:
+        "Make every day a little more special with our Mini Magnet Calendar 2027. Choose from personalised photo memories, business branding, or positive quote themes.",
+
+    price: 99,
+    priceLabel: "₹99",
+
+    badge: "LAUNCH OFFER",
+
+    images: miniMagnetCalendarImages,
+    image: miniMagnetCalendarImages[0],
+
+    features: [
+        "Mini Magnet Calendar 2027",
+        "Three Beautiful Themes",
+        "Personalised Designs",
+        "Perfect for Gifting"
+    ]
+},
+
 
 ];
