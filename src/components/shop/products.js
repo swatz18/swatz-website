@@ -744,8 +744,8 @@ export const products = [
     description:
         "Make every day a little more special with our Mini Magnet Calendar 2027. Choose from personalised photo memories, business branding, or positive quote themes.",
 
-    price: 99,
-    priceLabel: "₹99",
+    price: 199,
+    priceLabel: "₹199",
 
     badge: "LAUNCH OFFER",
 
